@@ -1,6 +1,6 @@
 +++
 date = '2025-11-17T11:29:26+11:00'
-draft = true
+draft = false
 title = 'State machines in Zephyr using boost::sml'
 author = 'Dean Sellers'
 tags = [
@@ -188,7 +188,7 @@ The ram report has nothing to say about any storage being used, which makes sens
 │               └── evts                  12   0.05%  0x800214b8 bss
 ```
 
-So ... maybe 70 odd **bytes** in RAM.
+So ... maybe 70 odd **bytes** in RAM. It is important to note that by moving the context like this I have made it async unsafe, there is no protection around access to the context.
 
 ## Conclusions
 

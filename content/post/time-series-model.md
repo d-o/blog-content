@@ -1,6 +1,6 @@
 +++
 date = '2025-11-10T11:29:26+11:00'
-draft = true
+draft = false
 title = 'Time series in graphs'
 author = 'Dean Sellers'
 tags = [
@@ -196,4 +196,4 @@ Now I have the database populated as per the model I can run some other queries.
 
 It looks like I have a workable model for the core of my planned device data storage and consuming API. There are a few things that need to be investigated further though. For instance if we wanted to query a measurement series for `time in the OK state`, how would that work? Also I should compare the data storage requirements with other solutions.
 
-In the [next]() article I'll use the python driver to connect and populate the model with some random data and do some more real world profiling.
+In an upcoming article I'll use the python driver to connect and populate the model with some random data and do some more real world profiling.
