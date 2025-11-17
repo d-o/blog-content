@@ -14,11 +14,11 @@ tags = [
 
 # Time series data as a graph
 
-Nearly all embedded devices report *event* based data. That is at time *t* there was an event, like a change of state or a measurement was generated. We generally want to record this event, *e* against it's time *t*. In my use case particulary time series data is at the core of what I need to store and query. There are really good, robust solutions for this already, for instance [influxDB](https://www.influxdata.com/) or [iotdb](https://iotdb.apache.org/).
+Nearly all embedded devices report *event* based data. That is at time *t* there was an event, like a change of state or a measurement was generated. We generally want to record this event, *e* against it's time *t*. In my use case particularly time series data is at the core of what I need to store and query. There are really good, robust solutions for this already, for instance [influxDB](https://www.influxdata.com/) or [iotdb](https://iotdb.apache.org/).
 
 Why not just use one of these then? This is a pretty good question, and there might be no reason not to. When I started to model the rest of the system though, it really looked like a graph. The connections between components and their relationships to each other make a lot of sense as a graph, and then a graph database is a natural fit for managing that data.
 
-Is it feasible to use the same graph DBMS to store the measurement/event data? In the [Neo4j](https://neo4j.com/) graph DBMS versions since 3.4 support native temporal types and indexes. Using previous versions time series like this were modelled using structures like [time trees](https://github.com/graphaware/neo4j-timetree) but this approach is now unecessary, at least for my use case, so I didn't spend too much time exploring it. 
+Is it feasible to use the same graph DBMS to store the measurement/event data? In the [Neo4j](https://neo4j.com/) graph DBMS versions since 3.4 support native temporal types and indexes. Using previous versions time series like this were modelled using structures like [time trees](https://github.com/graphaware/neo4j-timetree) but this approach is now unnecessary, at least for my use case, so I didn't spend too much time exploring it.
 
 In a later article I'll compare using a dedicated time series DBMS to the model tested here.
 
@@ -26,13 +26,13 @@ In a later article I'll compare using a dedicated time series DBMS to the model 
 
 Using graph modelling terminology a *node* in a graph is usually a noun, a thing, where an *edge*, *vertex* or *relationship* (from here on I'll just use the term *relationship*) is best thought of as a *verb* or an action. To borrow the common examples from Neo4j, an *Actor* is a thing and a *Movie* is a thing, *ACTED_IN*, *DIRECTED* are relationships. In this case I will model the events as the nouns, and the action of observation as a *relationship*. So the *(:Event {data: xxx})* is *\[:SEEN {at: a_time}\]*. In this way an event has both a magnitude (or some state) and a relationship in time to be fully described.
 
-In this basic model we have a device that *PROVIDES* data, *Event*s that are *SEEN* at discrete times. The data associated with these events will probably also have some other meta data, like it's unit of measurement, or an enumeration, or a scaling factor, etcetera. We could add this data to every *Event* instance, although fairly obviously this is a lot of redunant data. One easy method of deduplicating this is to add an intermediate node which provides the description of each event data. This interemediate node will also be useful to query a data source for particualar types of events.
+In this basic model we have a device that *PROVIDES* data, *Event*s that are *SEEN* at discrete times. The data associated with these events will probably also have some other meta data, like it's unit of measurement, or an enumeration, or a scaling factor, et cetera. We could add this data to every *Event* instance, although fairly obviously this is a lot of redundant data. One easy method of deduplicating this is to add an intermediate node which provides the description of each event data. This intermediate node will also be useful to query a data source for particular types of events.
 
 Enough talking, what does this look like? I have used the online [arrows app](https://arrows.app) to sketch out what I am thinking.
 
 ![Example data source with two time series data points](/time-series-basic-graph.png "Data source with two time series data points")
 
-This is a contrived example of course, but a quick scan reveals an interesting and useful aspect of this approach. In both cases the same data is duplicated at different times. In the case of the state we observed is as being `ok` in three out of the four observastions. For the measurement data it had a magnitude repeated twice. In the database we require storage for 5 nodes, to represent 8 events.
+This is a contrived example of course, but a quick scan reveals an interesting and useful aspect of this approach. In both cases the same data is duplicated at different times. In the case of the state we observed is as being `ok` in three out of the four observations. For the measurement data it had a magnitude repeated twice. In the database we require storage for 5 nodes, to represent 8 events.
 
 You could also go further in the deduplication and remove *SEEN* relationships that don't reflect a change in state, or data. This is completely application dependent, in this case I am assuming that it is important that the data was *SEEN*, even though it may or may not have changed.
 
@@ -103,22 +103,22 @@ END AS Data ORDER BY r.at
 └────────────────────┴───────────────────────────┴───────┘
 ```
 
-Great! I can see my events in order and when they happened, *BUT* the quotes around the times are suspicious. They are ordered as I expect, but ISO date/time strings sort lexically so that isn't really a clue and temporal values are implicity returned as strings if no other format is specified. I wonder how they are being stored?
+Great! I can see my events in order and when they happened, *BUT* the quotes around the times are suspicious. They are ordered as I expect, but ISO date/time strings sort lexically so that isn't really a clue and temporal values are implicitly returned as strings if no other format is specified. I wonder how they are being stored?
 
 ### Query the *SEEN* relationship's property type
 
 ``` cypher
 MATCH ()-[r:SEEN]->()
 WITH valueType(r.at) as at_type, r
-RETURN DISTINCT at_type AS seen_at_type, count(r) as occurences
+RETURN DISTINCT at_type AS seen_at_type, count(r) as occurrences
 ```
 
 ``` plaintext
-╒═════════════════╤══════════╕
-│seen_at_type     │occurences│
-╞═════════════════╪══════════╡
-│"STRING NOT NULL"│8         │
-└─────────────────┴──────────┘
+╒═════════════════╤═══════════╕
+│seen_at_type     │occurrences│
+╞═════════════════╪═══════════╡
+│"STRING NOT NULL"│8          │
+└─────────────────┴───────────┘
 ```
 
 So it appears that the time stamp property of the *SEEN* relationships has been stored as a string, rather than a [temporal](https://neo4j.com/docs/cypher-manual/current/values-and-types/temporal/) type, which is what I want the model to reflect. This isn't a surprise really as I couldn't find a method using arrows to specify a data type of a property. It is easy to fix though.
@@ -135,20 +135,20 @@ SET r.at = datetime(r.at)
 Set 8 properties, completed after 227 ms.
 ```
 
-Again, real order of magnitude difference in perfomance, the same query on my development machine.
+Again, real order of magnitude difference in performance, the same query on my development machine.
 
 ``` plaintext
 Set 8 properties, completed after 11 ms.
 ```
 
-Chaeck the data type of the *SEEN* timestamp property again.
+Check the data type of the *SEEN* timestamp property again.
 
 ``` plaintext
-╒═════════════════════════╤══════════╕
-│seen_at_type             │occurences│
-╞═════════════════════════╪══════════╡
-│"ZONED DATETIME NOT NULL"│8         │
-└─────────────────────────┴──────────┘
+╒═════════════════════════╤═══════════╕
+│seen_at_type             │occurrences│
+╞═════════════════════════╪═══════════╡
+│"ZONED DATETIME NOT NULL"│8          │
+└─────────────────────────┴───────────┘
 ```
 
 ### More queries

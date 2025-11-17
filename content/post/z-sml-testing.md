@@ -15,7 +15,7 @@ tags = [
 
 The [Zephyr OS](https://docs.zephyrproject.org/latest/introduction/index.html) does provides a [state machine framework](https://docs.zephyrproject.org/latest/services/smf/index.html) which is really flexible and easy to use, I don't really have anything against it. I did have the chance recently though to do some evaluations of state machine libraries for a C++ codebase and came to the conclusion that the [boost::smp](https://github.com/boost-ext/sml/tree/master) library was a great fit for what was needed at the time. If implementing a state machine pattern in a C++ codebase is on your radar I would encourage you to take the time to [review the rationale](https://boost-ext.github.io/sml/index.html#acknowledgements) and consider it.
 
-I got curious about employing the same library in Zephyr based projects, and wrote a bit of code to test it out. Before you shout *embedded C++ BOOST, who are you kidding*, this is a header only, really resource efficient approach. Modern C++ brings a lot of advantages to embedded system programming and has been rather unfairly seen as *the bloted cousin of C* in some circles, particulary when you add the word *boost*. While this sentiment is probably less popular now, I still run into it from time to time. I thought a quick dive into using modern C++ with a modern (C based) embedded OS might be interesting.
+I got curious about employing the same library in Zephyr based projects, and wrote a bit of code to test it out. Before you shout *embedded C++ BOOST, who are you kidding*, this is a header only, really resource efficient approach. Modern C++ brings a lot of advantages to embedded system programming and has been rather unfairly seen as *the bloated cousin of C* in some circles, particularly when you add the word *boost*. While this sentiment is probably less popular now, I still run into it from time to time. I thought a quick dive into using modern C++ with a modern (C based) embedded OS might be interesting.
 
 I won't spend a lot, well any really, time going through why/what/how a state machine. There are plenty of resources around to help you answer these questions, and I am sure you'll find out eventually *it's all state machines, all the way down*.
 
@@ -32,7 +32,7 @@ There are two states, `On` and `Off` and a brightness value. As a UML diagram it
 
 ![UML diagram of dimmable light state machine](/dimmed-light.png "UML diagram of the dimmable light state machine")
 
-Full disclosure, I used the [PlantUML example from boost::sml](https://boost-ext.github.io/sml/examples.html#plant-uml-integration) to generate the PlantUML code from the state transition table .. self documenting! With a bit of a tidy up the PlantUML generated loked like this.
+Full disclosure, I used the [PlantUML example from boost::sml](https://boost-ext.github.io/sml/examples.html#plant-uml-integration) to generate the PlantUML code from the state transition table .. self documenting! With a bit of a tidy up the PlantUML generated looked like this.
 
 ```plantuml
 [*] -> off
@@ -48,7 +48,7 @@ on: exit last_bright=bright
 
 ## Code
 
-My github page has the code in two seperate reposiories if you want to try it out. The [first](https://github.com/d-o/sml) is a fork of the `boost::sml` repo where I have added a `/zephyr` directory with a few bits to allow the library to be imported as a [Zephyr module](https://docs.zephyrproject.org/latest/develop/modules.html#). You don't really have to do much with this, but you could have a look if you are interested in how to make a simple Z module.
+My github page has the code in two separate repositories if you want to try it out. The [first](https://github.com/d-o/sml) is a fork of the `boost::sml` repo where I have added a `/zephyr` directory with a few bits to allow the library to be imported as a [Zephyr module](https://docs.zephyrproject.org/latest/develop/modules.html#). You don't really have to do much with this, but you could have a look if you are interested in how to make a simple Z module.
 
 The other one contains the Zephyr application, and west manifest to import Zephyr and the boost::sml library. It's [README](https://github.com/d-o/z-sml) gets you setup to build and test it out.
 
@@ -121,7 +121,7 @@ int main() {
 }
 ```
 
-## Ouput and analysis
+## Output and analysis
 
 Running the above in `qemu` gives the following output[^1];
 
@@ -152,9 +152,9 @@ Event "On"	Level 5	State On
 Event "Off"	Level 0	State Off
 ```
 
-I am not going to spend a lot of time on the perfomance aspects, although it would be interesting to compare it to Zephyr's bundled SMF, and there is a good comparison of different approaches [on boost::sml's page](https://boost-ext.github.io/sml/benchmarks.html). In terms of resource use though the ram and rom reports are a bit interesting. They are too big to fully reproduce but if you have built the demo yourself you can run them using west, `west build -t ram_report` and similarly `west build -t rom_report`.
+I am not going to spend a lot of time on the performance aspects, although it would be interesting to compare it to Zephyr's bundled SMF, and there is a good comparison of different approaches [on boost::sml's page](https://boost-ext.github.io/sml/benchmarks.html). In terms of resource use though the ram and rom reports are a bit interesting. They are too big to fully reproduce but if you have built the demo yourself you can run them using west, `west build -t ram_report` and similarly `west build -t rom_report`.
 
-Exerpts from the rom report show not much impact of including `boost::sml` and the whole `main` function.
+Excerpts from the rom report show not much impact of including `boost::sml` and the whole `main` function.
 
 ```
 ├── WORKSPACE                                      586   0.42%  -
@@ -171,7 +171,7 @@ Exerpts from the rom report show not much impact of including `boost::sml` and t
 │               └── main                           460   0.33%  0x800033dc text
 ```
 
-I don't pretend to fully understand the mechanics but using the power of C++ metaprogramming results in the whole machine the `WORKSPACE` total being 586 bytes in code. That seems impressive, of course there is overhead in introducing the C++ libs, but if your code was using it anyway, you have paid that price.
+I don't pretend to fully understand the mechanics but using the power of C++ meta programming results in the whole machine the `WORKSPACE` total being 586 bytes in code. That seems impressive, of course there is overhead in introducing the C++ libs, but if your code was using it anyway, you have paid that price.
 
 The ram report has nothing to say about any storage being used, which makes sense as in the code above I've got all of the instance variables on `main`'s stack. Moving the events and the context into global variables and running the ram report again shows;
 
@@ -192,7 +192,7 @@ So ... maybe 70 odd **bytes** in RAM.
 
 ## Conclusions
 
-This is just all fairly back of the envelope, but it doesn't seem that C++ has to be the hungry resource sucking beast that it gets made out to be. Of course this is a trivial example, but not that far removed from the sort of machines an embedded system has to run. If you can introduce a pattern like this for not much overhead, with the added benifits of clarity in code, ease of maintenance and strong type and memory safety ... seems like something we should all at least look at.
+This is just all fairly back of the envelope, but it doesn't seem that C++ has to be the hungry resource sucking beast that it gets made out to be. Of course this is a trivial example, but not that far removed from the sort of machines an embedded system has to run. If you can introduce a pattern like this for not much overhead, with the added benefits of clarity in code, ease of maintenance and strong type and memory safety ... seems like something we should all at least look at.
 
 
 [^1]: Probably could have spent more time on formatting that, but I am an embedded guy, wallpaper has never been my thing.
