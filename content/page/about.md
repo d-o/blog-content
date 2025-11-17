@@ -1,15 +1,26 @@
 +++
 title = "About"
-date = 2015-04-03T02:13:50Z
-author = "My Name"
-description = "Things about me."
+date = 2025-11-01T02:13:50Z
+draft = false
+author = "Dean Sellers"
+description = "Me and this site"
 menu = "Main"
 +++
 
-## About
+## This Blog
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dolor in magna lobortis egestas. Suspendisse eu erat tempor, tristique neque eu, convallis nulla. Curabitur vel bibendum lacus, at semper mauris. Suspendisse aliquet commodo ex, sed sagittis metus aliquam id. Maecenas feugiat rutrum lorem vel imperdiet. Nullam ornare lectus ut enim finibus, et porttitor mi tincidunt. Aenean lacinia, leo quis vehicula eleifend, quam libero sagittis erat, at euismod augue mauris et sapien. Sed id vehicula lectus, sit amet auctor ipsum. Nunc sed massa vel ex condimentum aliquam in a enim. Cras enim sem, tristique eu enim ac, congue commodo mi. Integer quis orci at dolor blandit eleifend.
+With so much of what I do as an embedded software and occasional hardware developer bound up in intellectual property this blog provides a technical showcase of the type of work I get involved in.
 
-## School
+## Me
 
-Sed quis pulvinar nisi, sed dapibus lacus. Mauris tempus ex ut ipsum facilisis interdum. Integer feugiat urna sed feugiat tempor. Quisque dictum vestibulum feugiat. Nunc nec est volutpat lorem imperdiet egestas sit amet ut orci. Aliquam venenatis neque ipsum, a placerat lectus cursus at. Donec pellentesque tellus hendrerit faucibus posuere. Etiam gravida consequat lectus, volutpat consectetur velit convallis nec. Praesent sagittis luctus dignissim.
+I am what I call a *full stack* embedded professional. What I mean in this context is that I have decades of experience in the end to end design, installation, integration and troubleshooting of electrotechnology for power generation, storage and delivery, materials batching and handling and the SCADA that goes along with them. Educated at Griffith University and TAFE NSW and by various other training providers along the way I have applied my skills in the instrumentation, particularly force and weight measurement, food production, marine, renewable energy and EV charging infrastructure industries.
+
+As an embedded developer I like to think I **speak computer**, and as such much like the 'Which OS do you use?' question I try to avoid the 'Which is the best language?' question. It really does depend on the problem at hand, the algorithm is always king, and sometimes the language choice is out of my hands. People like answers though and I guess my main exposure, probably in chronological order, C and C++ (with some dabbling in Rust and Zig more recently) as compiled languages with Python, Lua and the shell scripting flavours for scripting.
+
+As far as operating systems I have spent a lot of time with open embedded Yocto Linux and Zephyr OS. In the hardware design realm I have experience with Altium and KiCad as EDA packages and SolidWorks, Fusion and FreeCad for 3D modelling.
+
+## Shameless plugs
+
+- If you need any sort of force measurement electronics you should stop by [**Rinstrum**](www.rinstrum.com) for the best in globally certified load cell and weight measurement electronics.
+
+- To get there and back you will need a charge, get youself an [**Evos energy**](evos.com.au) AC charger to pipe your left over electrons into your EV.
