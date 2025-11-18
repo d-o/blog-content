@@ -21,6 +21,6 @@ As far as operating systems I have spent a lot of time with open embedded Yocto 
 
 ## Shameless plugs
 
-- If you need any sort of force measurement electronics you should stop by [**Rinstrum**](www.rinstrum.com) for the best in globally certified load cell and weight measurement electronics.
+- If you need any sort of force measurement electronics you should stop by [**Rinstrum**](https://rinstrum.com) for the best in globally certified load cell and weight measurement electronics.
 
-- To get there and back you will need a charge, get youself an [**Evos energy**](evos.com.au) AC charger to pipe your left over electrons into your EV.
+- To get there and back you will need a charge, get youself an [**Evos energy**](https://evos.com.au) AC charger to pipe your left over electrons into your EV.
