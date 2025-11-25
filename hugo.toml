@@ -3,6 +3,7 @@ title = "Ampsand"
 theme = "ghostwriter"
 languageCode = "en-au"
 copyright = "Dean Sellers"
+enableGitInfo = true
 
 pygmentsUseClasses = true
 pygmentsCodefences = true
@@ -38,6 +39,7 @@ intro = true
 headline = "[~/=]"
 description = "Amps <- & -> Embedded"
 github = "https://github.com/d-o"
+github_repo = "blog-content"
 linkedin = "https://www.linkedin.com/in/dean-sellers-embedded/"
 email = "dean@sellers.id.au"
 opengraph = true
