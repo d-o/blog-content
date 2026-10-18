@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 90 960 260" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">What a trap does</title>
+  <desc id="d">A flowchart. The program runs. In EXECUTE the core finds an instruction it cannot run. On that one clock edge it saves the pc in mepc, the cause in mcause and the detail in mtval, copies MIE into MPIE, clears MIE, and loads the pc from mtvec. The handler runs, and MRET puts the pc back from mepc, MIE back from MPIE and sets MPIE to 1. The program continues.</desc>
+  <rect y="90" width="960" height="270" fill="#ffffff"/>
+
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <rect x="20"  y="140" width="140" height="70" rx="4"/>
+    <rect x="260" y="110" width="250" height="130" rx="4"/>
+    <rect x="610" y="140" width="140" height="70" rx="4"/>
+  </g>
+  <rect x="800" y="140" width="140" height="70" rx="4" fill="#f6f6f2" stroke="#333" stroke-width="2"/>
+
+  <g fill="#333" text-anchor="middle">
+    <text x="90" y="170" font-weight="bold">Program</text><text x="90" y="190" font-size="13">running</text>
+    <text x="385" y="136" font-weight="bold">Trap taken, in EXECUTE</text>
+    <text x="680" y="170" font-weight="bold">Handler</text><text x="680" y="190" font-size="13">at mtvec</text>
+    <text x="870" y="170" font-weight="bold">MRET</text><text x="870" y="190" font-size="13">returns</text>
+  </g>
+  <g fill="#333" font-size="13">
+    <text x="276" y="160">mepc    = pc of the instruction</text>
+    <text x="276" y="180">mcause  = why</text>
+    <text x="276" y="200">mtval   = the detail</text>
+    <text x="276" y="220">MPIE = MIE,  MIE = 0,  pc = mtvec</text>
+  </g>
+
+  <g stroke="#333" stroke-width="2" fill="none">
+    <path d="M160 175 H260"/>
+    <path d="M510 175 H610"/>
+    <path d="M750 175 H800"/>
+    <path d="M870 210 V300 H90 V210" stroke-dasharray="6 4"/>
+  </g>
+  <g fill="#333">
+    <path d="M251 170 L260 175 L251 180 Z"/>
+    <path d="M601 170 L610 175 L601 180 Z"/>
+    <path d="M791 170 L800 175 L791 180 Z"/>
+    <path d="M85 219 L90 210 L95 219 Z"/>
+  </g>
+  <g fill="#333" font-size="13" text-anchor="middle">
+    <text x="210" y="164">can't run it</text>
+    <text x="560" y="164">one clock edge</text>
+    <text x="480" y="320">pc = mepc (or the next instruction), MIE = MPIE, MPIE = 1</text>
+  </g>
+</svg>
