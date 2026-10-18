@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">How a program is checked</title>
+  <desc id="d">rv32.py holds every instruction encoding and is checked against the GNU assembler. The assembler, the test generator and the rv32sim golden model all use it. The assembler turns a test program into words and the generator turns those into a testbench for the core running in a simulator. rv32sim runs the same program. A compare step checks the core against the model after every instruction: the program counter, the register written and the number of clocks.</desc>
+  <rect width="960" height="380" fill="#ffffff"/>
+
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <rect x="20"  y="20"  width="130" height="50" rx="4"/>
+    <rect x="20"  y="150" width="130" height="70" rx="4"/>
+    <rect x="230" y="40"  width="150" height="56" rx="4"/>
+    <rect x="230" y="157" width="150" height="56" rx="4"/>
+    <rect x="230" y="290" width="150" height="56" rx="4"/>
+    <rect x="450" y="157" width="150" height="56" rx="4"/>
+  </g>
+  <rect x="680" y="157" width="230" height="56" rx="4" fill="#e6f0f6" stroke="#2a6f97" stroke-width="2"/>
+
+  <g fill="#333" text-anchor="middle">
+    <text x="85" y="40">GNU</text><text x="85" y="59">assembler</text>
+    <text x="85" y="180" font-weight="bold">rv32.py</text><text x="85" y="200" font-size="13">encode and decode</text>
+    <text x="305" y="64">Assembler</text><text x="305" y="83" font-size="13">programs to words</text>
+    <text x="305" y="181">Test generator</text><text x="305" y="200" font-size="13">words to testbench</text>
+    <text x="305" y="314" font-weight="bold">rv32sim</text><text x="305" y="333" font-size="13">the golden model</text>
+    <text x="525" y="181">The core</text><text x="525" y="200" font-size="13">in a simulator</text>
+    <text x="795" y="181" fill="#1d5470" font-weight="bold">Compare</text><text x="795" y="200" font-size="13" fill="#1d5470">pc, register, clocks</text>
+  </g>
+
+  <g stroke="#333" stroke-width="2" fill="none">
+    <path d="M85 70 V150" stroke-dasharray="6 4"/>
+    <path d="M150 185 H230"/>
+    <path d="M150 185 H190 V68 H230"/>
+    <path d="M150 185 H190 V318 H230"/>
+    <path d="M305 96 V157"/>
+    <path d="M380 185 H450"/>
+    <path d="M600 185 H680"/>
+    <path d="M380 318 H795 V213"/>
+  </g>
+  <g fill="#333">
+    <path d="M80 141 L85 151 L90 141 Z"/>
+    <path d="M221 180 L230 185 L221 190 Z"/>
+    <path d="M221 63 L230 68 L221 73 Z"/>
+    <path d="M221 313 L230 318 L221 323 Z"/>
+    <path d="M300 148 L305 158 L310 148 Z"/>
+    <path d="M441 180 L450 185 L441 190 Z"/>
+    <path d="M671 180 L680 185 L671 190 Z"/>
+    <path d="M790 223 L795 213 L800 223 Z"/>
+  </g>
+  <g fill="#333" font-size="12" text-anchor="middle">
+    <text x="85" y="112" text-anchor="start" dx="8">checks</text>
+    <text x="415" y="176">testbench</text>
+    <text x="640" y="176">answers</text>
+    <text x="590" y="338">the model's answers</text>
+  </g>
+</svg>
