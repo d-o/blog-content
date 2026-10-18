@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">When each Larson step happens, three ways</title>
+  <desc id="d">Three rows of dots on a clock count axis, with vertical lines every 64 clocks showing the intended step time. The delay loop drifts late, 72 clocks a step. Polling the timer lands on the lines until the turnaround, where it is two clocks late and stays that way. The timer interrupt lands exactly on every line.</desc>
+  <rect width="960" height="330" fill="#ffffff"/>
+  <path d="M300 40 V250" stroke="#cfcfc8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="300" y="272" text-anchor="middle" font-size="12" fill="#333">0</text>
+  <path d="M428 40 V250" stroke="#cfcfc8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="428" y="272" text-anchor="middle" font-size="12" fill="#333">64</text>
+  <path d="M556 40 V250" stroke="#cfcfc8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="556" y="272" text-anchor="middle" font-size="12" fill="#333">128</text>
+  <path d="M684 40 V250" stroke="#cfcfc8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="684" y="272" text-anchor="middle" font-size="12" fill="#333">192</text>
+  <path d="M812 40 V250" stroke="#cfcfc8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="812" y="272" text-anchor="middle" font-size="12" fill="#333">256</text>
+  <path d="M300 250 H900" stroke="#333" stroke-width="2"/>
+  <text x="600" y="298" text-anchor="middle" font-size="13" fill="#333">CPU clocks since the first step (dashed lines: the intended 64 clock beat)</text>
+  <text x="276" y="90" text-anchor="end" fill="#333" font-weight="bold">Rung 1: a delay loop</text>
+  <text x="276" y="108" text-anchor="end" fill="#333" font-size="12">72 a step, not 64</text>
+  <path d="M300 90 H880" stroke="#333" stroke-width="1.5"/>
+  <circle cx="300" cy="90" r="7" fill="#333"/>
+  <circle cx="444" cy="90" r="7" fill="#333"/>
+  <circle cx="588" cy="90" r="7" fill="#333"/>
+  <circle cx="732" cy="90" r="7" fill="#333"/>
+  <circle cx="880" cy="90" r="7" fill="#333"/>
+  <text x="276" y="150" text-anchor="end" fill="#333" font-weight="bold">Rung 2: poll mtime</text>
+  <text x="276" y="168" text-anchor="end" fill="#333" font-size="12">on time, up to a poll late</text>
+  <path d="M300 150 H816" stroke="#333" stroke-width="1.5"/>
+  <circle cx="300" cy="150" r="7" fill="#333"/>
+  <circle cx="428" cy="150" r="7" fill="#333"/>
+  <circle cx="556" cy="150" r="7" fill="#333"/>
+  <circle cx="688" cy="150" r="7" fill="#333"/>
+  <circle cx="816" cy="150" r="7" fill="#333"/>
+  <text x="276" y="210" text-anchor="end" fill="#333" font-weight="bold">Rung 3: timer interrupt</text>
+  <text x="276" y="228" text-anchor="end" fill="#333" font-size="12">exactly 64, every step</text>
+  <path d="M300 210 H812" stroke="#333" stroke-width="1.5"/>
+  <circle cx="300" cy="210" r="7" fill="#2a6f97"/>
+  <circle cx="428" cy="210" r="7" fill="#2a6f97"/>
+  <circle cx="556" cy="210" r="7" fill="#2a6f97"/>
+  <circle cx="684" cy="210" r="7" fill="#2a6f97"/>
+  <circle cx="812" cy="210" r="7" fill="#2a6f97"/>
+</svg>
