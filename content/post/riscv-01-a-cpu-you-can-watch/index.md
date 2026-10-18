@@ -197,7 +197,7 @@ At full speed the clock is 25 MHz and the scanner is a blur, so the design slows
 
 {{< video src="larson-vsim.mp4" caption="The scanner running in my Verilator based simulator, drawn with Alchitry's board artwork. Register x1 is on the right hand row of Io LEDs, the program counter is on the seven segment display and the Cu's state LEDs are in the column at the far right." >}}
 
-That is a clip from a simulator I built around the design, and I will come back to why. It is not all mine. [Verilator][verilator] does the simulating, and the board you see, the [Cu][cu] and the [Io][io] with their LEDs, switches and buttons, is Alchitry's own artwork and layout, taken from the open source [Alchitry Labs][labs] (GPL-3.0) that I have installed. My part is the glue that runs the design on Verilator and draws their board from its outputs. The state lights on the Cu cycle through FETCH and EXECUTE while the [Io][io] LEDs walk along.
+That is a clip from a simulator I built around the design, drawing Alchitry's own board. It gets its own post, [The simulator I use]({{< relref "sim-00-the-simulator-i-use" >}}), which says what is mine and what is not. The state lights on the Cu cycle through FETCH and EXECUTE while the [Io][io] LEDs walk along.
 
 ## What I learned
 
@@ -211,12 +211,8 @@ Next time, [how I make sure this thing does what it says]({{< relref "riscv-02-t
 - Alchitry Cu: <https://alchitry.com/boards/cu/>
 - Alchitry Io: <https://alchitry.com/boards/io/>
 - Lucid reference: <https://alchitry.com/tutorials/references/lucid-reference/>
-- Alchitry Labs V2 (source, GPL-3.0): <https://github.com/alchitry/Alchitry-Labs-V2>
-- Verilator: <https://www.veripool.org/verilator/>
 
 [riscv]: https://docs.riscv.org/reference/isa/v20260120/index.html
 [cu]: https://alchitry.com/boards/cu/
 [io]: https://alchitry.com/boards/io/
 [lucid]: https://alchitry.com/tutorials/references/lucid-reference/
-[labs]: https://github.com/alchitry/Alchitry-Labs-V2
-[verilator]: https://www.veripool.org/verilator/
