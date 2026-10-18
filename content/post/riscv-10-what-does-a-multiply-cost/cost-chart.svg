@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">Clocks for one multiply, divide or remainder</title>
+  <desc id="d">A grouped bar chart. For each of multiply, divide and remainder there are three bars for small, medium and large operands. Multiply takes 55, 191 and 387 clocks, divide 113, 301 and 567, remainder 121, 309 and 575. A second axis gives the same figures in microseconds at 25 MHz, from 0 to 24.</desc>
+  <rect width="960" height="380" fill="#ffffff"/>
+  <path d="M110 290 H850" stroke="#e1e1da" stroke-width="1"/>
+  <text x="100" y="294" text-anchor="end" font-size="12" fill="#333">0</text>
+  <text x="860" y="294" text-anchor="start" font-size="12" fill="#333">0 µs</text>
+  <path d="M110 250 H850" stroke="#e1e1da" stroke-width="1"/>
+  <text x="100" y="254" text-anchor="end" font-size="12" fill="#333">100</text>
+  <text x="860" y="254" text-anchor="start" font-size="12" fill="#333">4 µs</text>
+  <path d="M110 210 H850" stroke="#e1e1da" stroke-width="1"/>
+  <text x="100" y="214" text-anchor="end" font-size="12" fill="#333">200</text>
+  <text x="860" y="214" text-anchor="start" font-size="12" fill="#333">8 µs</text>
+  <path d="M110 170 H850" stroke="#e1e1da" stroke-width="1"/>
+  <text x="100" y="174" text-anchor="end" font-size="12" fill="#333">300</text>
+  <text x="860" y="174" text-anchor="start" font-size="12" fill="#333">12 µs</text>
+  <path d="M110 130 H850" stroke="#e1e1da" stroke-width="1"/>
+  <text x="100" y="134" text-anchor="end" font-size="12" fill="#333">400</text>
+  <text x="860" y="134" text-anchor="start" font-size="12" fill="#333">16 µs</text>
+  <path d="M110 90 H850" stroke="#e1e1da" stroke-width="1"/>
+  <text x="100" y="94" text-anchor="end" font-size="12" fill="#333">500</text>
+  <text x="860" y="94" text-anchor="start" font-size="12" fill="#333">20 µs</text>
+  <path d="M110 50 H850" stroke="#e1e1da" stroke-width="1"/>
+  <text x="100" y="54" text-anchor="end" font-size="12" fill="#333">600</text>
+  <text x="860" y="54" text-anchor="start" font-size="12" fill="#333">24 µs</text>
+  <path d="M110 290 H850" stroke="#333" stroke-width="2"/>
+  <rect x="150" y="268" width="52" height="22" fill="#f6f6f2" stroke="#333" stroke-width="2"/>
+  <text x="176" y="262" text-anchor="middle" font-size="13" fill="#333">55</text>
+  <rect x="210" y="214" width="52" height="76" fill="#c9dbe6" stroke="#333" stroke-width="2"/>
+  <text x="236" y="208" text-anchor="middle" font-size="13" fill="#333">191</text>
+  <rect x="270" y="135" width="52" height="155" fill="#2a6f97" stroke="#333" stroke-width="2"/>
+  <text x="296" y="129" text-anchor="middle" font-size="13" fill="#333">387</text>
+  <text x="236" y="314" text-anchor="middle" font-weight="bold" fill="#333">mul</text>
+  <rect x="402" y="245" width="52" height="45" fill="#f6f6f2" stroke="#333" stroke-width="2"/>
+  <text x="428" y="239" text-anchor="middle" font-size="13" fill="#333">113</text>
+  <rect x="462" y="170" width="52" height="120" fill="#c9dbe6" stroke="#333" stroke-width="2"/>
+  <text x="488" y="164" text-anchor="middle" font-size="13" fill="#333">301</text>
+  <rect x="522" y="63" width="52" height="227" fill="#2a6f97" stroke="#333" stroke-width="2"/>
+  <text x="548" y="57" text-anchor="middle" font-size="13" fill="#333">567</text>
+  <text x="488" y="314" text-anchor="middle" font-weight="bold" fill="#333">div</text>
+  <rect x="654" y="242" width="52" height="48" fill="#f6f6f2" stroke="#333" stroke-width="2"/>
+  <text x="680" y="236" text-anchor="middle" font-size="13" fill="#333">121</text>
+  <rect x="714" y="166" width="52" height="124" fill="#c9dbe6" stroke="#333" stroke-width="2"/>
+  <text x="740" y="160" text-anchor="middle" font-size="13" fill="#333">309</text>
+  <rect x="774" y="60" width="52" height="230" fill="#2a6f97" stroke="#333" stroke-width="2"/>
+  <text x="800" y="54" text-anchor="middle" font-size="13" fill="#333">575</text>
+  <text x="740" y="314" text-anchor="middle" font-weight="bold" fill="#333">mod</text>
+  <rect x="130" y="342" width="16" height="16" fill="#f6f6f2" stroke="#333" stroke-width="1.5"/>
+  <text x="154" y="355" font-size="13" fill="#333">small operands</text>
+  <rect x="280" y="342" width="16" height="16" fill="#c9dbe6" stroke="#333" stroke-width="1.5"/>
+  <text x="304" y="355" font-size="13" fill="#333">medium</text>
+  <rect x="430" y="342" width="16" height="16" fill="#2a6f97" stroke="#333" stroke-width="1.5"/>
+  <text x="454" y="355" font-size="13" fill="#333">large (32 bit)</text>
+  <text x="100" y="40" text-anchor="end" font-size="13" fill="#333">clocks</text>
+  <text x="860" y="40" font-size="13" fill="#333">at 25 MHz</text>
+</svg>
