@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">The memory map</title>
+  <desc id="d">One 32 bit address space, not to scale. RAM, 8 kilobytes of code and data, sits at address 0. A large gap of unmapped addresses follows, where writes are ignored and reads return 0. The I/O devices start at 0x80000000: the UART, the switch register, the machine timer, the buttons and the seven segment display, each in its own window of 4 kilobytes apart.</desc>
+  <rect width="960" height="430" fill="#ffffff"/>
+
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <rect x="40" y="30"  width="200" height="140" rx="4"/>
+    <rect x="40" y="170" width="200" height="130" rx="0" fill="#ffffff" stroke-dasharray="6 4"/>
+    <rect x="40" y="300" width="200" height="90"  rx="4"/>
+  </g>
+  <rect x="40" y="30" width="200" height="140" rx="4" fill="#e6f0f6" stroke="#2a6f97" stroke-width="2"/>
+
+  <g fill="#333" text-anchor="middle">
+    <text x="140" y="92" fill="#1d5470" font-weight="bold">I/O devices</text>
+    <text x="140" y="112" font-size="13" fill="#1d5470">from 0x8000_0000</text>
+    <text x="140" y="234" font-size="13">unmapped</text>
+    <text x="140" y="254" font-size="12">writes ignored, reads 0</text>
+    <text x="140" y="338" font-weight="bold">RAM, 8 KB</text>
+    <text x="140" y="358" font-size="13">code and data</text>
+    <text x="140" y="376" font-size="12">from 0x0000_0000</text>
+  </g>
+  <g fill="#333" font-size="12">
+    <text x="40" y="22">top: 0xFFFF_FFFF</text>
+    <text x="40" y="408">bottom: 0x0000_0000</text>
+  </g>
+  <text x="240" y="408" text-anchor="end" font-size="12" fill="#333">not to scale</text>
+
+  <path d="M240 30 L420 30 M240 170 L420 170" stroke="#2a6f97" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <rect x="420" y="30"  width="500" height="64" rx="4"/>
+    <rect x="420" y="100" width="500" height="50" rx="4"/>
+    <rect x="420" y="156" width="500" height="50" rx="4"/>
+    <rect x="420" y="212" width="500" height="50" rx="4"/>
+    <rect x="420" y="268" width="500" height="50" rx="4"/>
+  </g>
+  <g fill="#333">
+    <text x="436" y="54" font-weight="bold">0x8000_0000  UART</text>
+    <text x="436" y="76" font-size="13">+0 TXDATA (write)   +4 STATUS   +8 RXDATA (a read takes the byte)</text>
+    <text x="436" y="124" font-weight="bold">0x8000_1000  Switches</text>
+    <text x="436" y="142" font-size="13">the middle DIP bank, read only</text>
+    <text x="436" y="180" font-weight="bold">0x8000_2000  Machine timer</text>
+    <text x="436" y="198" font-size="13">mtime and mtimecmp, built for one tick a microsecond</text>
+    <text x="436" y="236" font-weight="bold">0x8000_3000  Buttons</text>
+    <text x="436" y="254" font-size="13">pending, overrun and level bits, the interrupt source</text>
+    <text x="436" y="292" font-weight="bold">0x8000_4000  Seven segment display</text>
+    <text x="436" y="310" font-size="13">four character registers</text>
+  </g>
+</svg>
