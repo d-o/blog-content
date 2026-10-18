@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="t">Two ways to build a control unit</title>
+  <desc id="d">Top: hardwired control. The instruction register and a state counter feed decode logic, which drives the control signals to the datapath. Bottom: microprogrammed control. The instruction register sets an address sequencer, which addresses a control ROM; the ROM's control words drive the datapath and supply the next address back to the sequencer.</desc>
+  <rect width="880" height="400" fill="#ffffff"/>
+
+  <g fill="#333" font-weight="bold" font-size="16">
+    <text x="20" y="28">Hardwired control</text>
+    <text x="20" y="228">Microprogrammed control</text>
+  </g>
+  <text x="196" y="28" font-size="14" font-style="italic" fill="#2a6f97">&#8592; where this core sits</text>
+
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <!-- hardwired -->
+    <rect x="20"  y="60"  width="140" height="64" rx="4"/>
+    <rect x="240" y="60"  width="180" height="64" rx="4"/>
+    <rect x="240" y="150" width="180" height="40" rx="4"/>
+    <!-- microprogrammed -->
+    <rect x="20"  y="260" width="140" height="64" rx="4"/>
+    <rect x="200" y="260" width="150" height="64" rx="4"/>
+    <rect x="400" y="260" width="170" height="64" rx="4"/>
+  </g>
+  <rect x="700" y="60" width="160" height="264" rx="4" fill="#e6f0f6" stroke="#2a6f97" stroke-width="2"/>
+
+  <g fill="#333" text-anchor="middle">
+    <text x="90"  y="97">Instruction</text><text x="90"  y="116">register</text>
+    <text x="330" y="97">Decode logic</text><text x="330" y="116" font-size="13">(gates)</text>
+    <text x="330" y="175">State counter</text>
+    <text x="90"  y="297">Instruction</text><text x="90"  y="316">register</text>
+    <text x="275" y="297">Address</text><text x="275" y="316">sequencer</text>
+    <text x="485" y="297">Control ROM</text><text x="485" y="316" font-size="13">(control words)</text>
+    <text x="780" y="180" fill="#1d5470" font-weight="bold">Datapath</text>
+    <text x="780" y="200" font-size="13" fill="#1d5470">registers, ALU, buses</text>
+  </g>
+
+  <g stroke="#333" stroke-width="2" fill="none">
+    <!-- hardwired -->
+    <path d="M160 92 H240"/>
+    <path d="M330 150 V124"/>
+    <path d="M420 92 H700"/>
+    <!-- microprogrammed -->
+    <path d="M160 292 H200"/>
+    <path d="M350 292 H400"/>
+    <path d="M570 292 H700"/>
+    <path d="M485 324 V356 H275 V324"/>
+  </g>
+  <g fill="#333">
+    <path d="M230 87 L240 92 L230 97 Z"/>
+    <path d="M325 134 L330 124 L335 134 Z"/>
+    <path d="M690 87 L700 92 L690 97 Z"/>
+    <path d="M190 287 L200 292 L190 297 Z"/>
+    <path d="M390 287 L400 292 L390 297 Z"/>
+    <path d="M690 287 L700 292 L690 297 Z"/>
+    <path d="M270 334 L275 324 L280 334 Z"/>
+  </g>
+  <g fill="#333" font-size="13" text-anchor="middle">
+    <text x="560" y="82">control signals</text>
+    <text x="635" y="282">control signals</text>
+    <text x="380" y="376">next address</text>
+  </g>
+</svg>
