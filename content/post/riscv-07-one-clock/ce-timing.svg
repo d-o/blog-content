@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">One clock and a clock enable</title>
+  <desc id="d">A timing diagram. The clock never stops. The clock enable, ce, goes high for one clock at a time, changing on the falling edge of the clock. On the next rising edge, with ce high, the computer takes a step and the CPU state moves on. Between those pulses the CPU holds. The timer tick counter runs on every clock regardless.</desc>
+  <rect width="960" height="330" fill="#ffffff"/>
+  <text x="212" y="75" text-anchor="end" fill="#333" font-weight="bold">clk</text>
+  <text x="212" y="140" text-anchor="end" fill="#333" font-weight="bold">ce</text>
+  <text x="212" y="205" text-anchor="end" fill="#333" font-weight="bold">CPU state</text>
+  <text x="212" y="270" text-anchor="end" fill="#333" font-weight="bold">timer tick</text>
+  <path d="M230 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M298 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M366 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M434 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M502 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M570 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M638 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M706 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M774 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M842 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M910 40 V290" stroke="#e1e1da" stroke-width="1"/>
+  <path d="M230 55 H264 V85 H298 V55 H332 V85 H366 V55 H400 V85 H434 V55 H468 V85 H502 V55 H536 V85 H570 V55 H604 V85 H638 V55 H672 V85 H706 V55 H740 V85 H774 V55 H808 V85 H842 V55 H876 V85 H910 " stroke="#333" stroke-width="2" fill="none"/>
+  <path d="M230 150 H332 V120 H400 V150 H604 V120 H672 V150 H910 " stroke="#2a6f97" stroke-width="2.5" fill="none"/>
+  <rect x="232" y="180" width="132" height="40" rx="4" fill="#f6f6f2" stroke="#333" stroke-width="2"/>
+  <text x="298" y="205" text-anchor="middle" fill="#333">FETCH</text>
+  <rect x="368" y="180" width="268" height="40" rx="4" fill="#f6f6f2" stroke="#333" stroke-width="2"/>
+  <text x="502" y="205" text-anchor="middle" fill="#333">EXECUTE</text>
+  <rect x="640" y="180" width="268" height="40" rx="4" fill="#f6f6f2" stroke="#333" stroke-width="2"/>
+  <text x="774" y="205" text-anchor="middle" fill="#333">FETCH</text>
+  <rect x="238" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="306" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="374" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="442" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="510" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="578" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="646" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="714" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="782" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="850" y="255" width="52" height="20" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="1.5"/>
+  <text x="366" y="112" text-anchor="middle" font-size="12" fill="#1d5470">computer samples ce here</text>
+  <path d="M366 116 V180" stroke="#2a6f97" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="638" y="112" text-anchor="middle" font-size="12" fill="#1d5470">and here</text>
+  <path d="M638 116 V180" stroke="#2a6f97" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="570" y="25" text-anchor="middle" font-size="13" fill="#333">ce changes on the falling edge, steady half a clock either side of the rising edge that samples it</text>
+  <text x="570" y="312" text-anchor="middle" font-size="13" fill="#333">the clock and the timer never stop; the CPU only moves when ce is high</text>
+</svg>
