@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">Two flip flops in two instances, and the order they update</title>
+  <desc id="d">An outer module holds flip flop a, which counts. An inner module holds flip flop b, which copies a. On a real clock edge both sample the values from before the edge, so b is always one behind a. The Alchitry simulator updates one instance at a time in a varying order. If the outer instance updates first, b samples the new value of a and equals a. If the inner instance updates first, b is one behind, as it should be.</desc>
+  <rect width="960" height="360" fill="#ffffff"/>
+
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <rect x="20"  y="60"  width="250" height="240" rx="4"/>
+    <rect x="50"  y="95"  width="90"  height="50" rx="4"/>
+    <rect x="50"  y="215" width="90"  height="50" rx="4"/>
+  </g>
+  <rect x="35" y="170" width="220" height="115" rx="4" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <g fill="#333" text-anchor="middle">
+    <text x="145" y="48" font-weight="bold">Outer instance</text>
+    <text x="95" y="125">dff a</text>
+    <text x="95" y="245">dff b</text>
+    <text x="48" y="190" font-size="13" text-anchor="start">inner instance</text>
+  </g>
+  <g stroke="#333" stroke-width="2" fill="none">
+    <path d="M140 120 H200 V240 H140"/>
+  </g>
+  <path d="M149 235 L140 240 L149 245 Z" fill="#333"/>
+  <text x="208" y="150" font-size="13" fill="#333">b.d = a.q</text>
+
+  <g fill="#333" font-weight="bold" font-size="14">
+    <text x="330" y="48">Clock edge</text>
+  </g>
+  <g fill="#333" font-size="13" text-anchor="middle">
+    <text x="520" y="48">1</text><text x="620" y="48">2</text><text x="720" y="48">3</text><text x="820" y="48">4</text>
+  </g>
+  <path d="M320 60 H900" stroke="#333" stroke-width="2"/>
+
+  <g fill="#333" font-size="14">
+    <text x="330" y="96">a (outer)</text>
+    <text x="330" y="150" font-weight="bold">b, as the Verilog says</text>
+    <text x="330" y="204">b, outer updates first</text>
+    <text x="330" y="258">b, inner updates first</text>
+  </g>
+  <g fill="#333" text-anchor="middle">
+    <text x="520" y="96">1</text><text x="620" y="96">2</text><text x="720" y="96">3</text><text x="820" y="96">4</text>
+    <text x="520" y="150">0</text><text x="620" y="150">1</text><text x="720" y="150">2</text><text x="820" y="150">3</text>
+    <text x="520" y="204" fill="#9a3412" font-weight="bold">1</text><text x="620" y="204" fill="#9a3412" font-weight="bold">2</text><text x="720" y="204" fill="#9a3412" font-weight="bold">3</text><text x="820" y="204" fill="#9a3412" font-weight="bold">4</text>
+    <text x="520" y="258">0</text><text x="620" y="258">1</text><text x="720" y="258">2</text><text x="820" y="258">3</text>
+  </g>
+  <g stroke="#cfcfc8" stroke-width="1">
+    <path d="M320 112 H900"/><path d="M320 166 H900"/><path d="M320 220 H900"/><path d="M320 274 H900"/>
+  </g>
+  <g fill="#9a3412" font-size="13">
+    <text x="330" y="304">Outer first is wrong: b sampled a after the edge.</text>
+  </g>
+  <g fill="#1d5470" font-size="13">
+    <text x="330" y="328">Which one you get changes from run to run.</text>
+  </g>
+</svg>
