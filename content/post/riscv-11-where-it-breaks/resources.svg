@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">What the build uses of the chip</title>
+  <desc id="d">Horizontal bars of how much of the chip the build uses: 5119 of 7680 logic cells, 16 of 32 block RAMs, all 8 global clock buffers and 1 of 2 PLLs.</desc>
+  <rect width="960" height="330" fill="#ffffff"/>
+  <text x="254" y="75" text-anchor="end" font-weight="bold" fill="#333">Logic cells</text>
+  <rect x="270" y="50" width="520" height="36" fill="#ffffff" stroke="#333" stroke-width="2"/>
+  <rect x="270" y="50" width="347" height="36" fill="#e6f0f6" stroke="#2a6f97" stroke-width="2"/>
+  <text x="806" y="74" fill="#333">5,119 of 7,680</text>
+  <text x="254" y="135" text-anchor="end" font-weight="bold" fill="#333">Block RAM</text>
+  <rect x="270" y="110" width="520" height="36" fill="#ffffff" stroke="#333" stroke-width="2"/>
+  <rect x="270" y="110" width="260" height="36" fill="#e6f0f6" stroke="#2a6f97" stroke-width="2"/>
+  <text x="806" y="134" fill="#333">16 of 32</text>
+  <text x="254" y="195" text-anchor="end" font-weight="bold" fill="#333">Global clock buffers</text>
+  <rect x="270" y="170" width="520" height="36" fill="#ffffff" stroke="#333" stroke-width="2"/>
+  <rect x="270" y="170" width="520" height="36" fill="#f4d9c6" stroke="#9a3412" stroke-width="2"/>
+  <text x="806" y="194" fill="#333">8 of 8</text>
+  <text x="254" y="255" text-anchor="end" font-weight="bold" fill="#333">PLLs</text>
+  <rect x="270" y="230" width="520" height="36" fill="#ffffff" stroke="#333" stroke-width="2"/>
+  <rect x="270" y="230" width="260" height="36" fill="#e6f0f6" stroke="#2a6f97" stroke-width="2"/>
+  <text x="806" y="254" fill="#333">1 of 2</text>
+  <path d="M270 295 H790" stroke="#333" stroke-width="2"/>
+  <path d="M270 295 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="270" y="318" text-anchor="middle" font-size="12" fill="#333">0%</text>
+  <path d="M400 295 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="400" y="318" text-anchor="middle" font-size="12" fill="#333">25%</text>
+  <path d="M530 295 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="530" y="318" text-anchor="middle" font-size="12" fill="#333">50%</text>
+  <path d="M660 295 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="660" y="318" text-anchor="middle" font-size="12" fill="#333">75%</text>
+  <path d="M790 295 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="790" y="318" text-anchor="middle" font-size="12" fill="#333">100%</text>
+</svg>
