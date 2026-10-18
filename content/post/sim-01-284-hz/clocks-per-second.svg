@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">Simulated clock rate, on a log scale</title>
+  <desc id="d">A horizontal bar chart of simulated clock rate on a logarithmic axis from 100 Hz to 10 MHz. The Alchitry Labs simulator measured between 151 and 384 Hz, depending on what was simulated, with the board view readout at 284 Hz. Verilator in vsim ran at about 5 MHz, roughly twenty thousand times faster.</desc>
+  <rect width="960" height="360" fill="#ffffff"/>
+
+  <g stroke="#cfcfc8" stroke-width="1">
+    <path d="M310 50 V290"/><path d="M430 50 V290"/><path d="M550 50 V290"/>
+    <path d="M670 50 V290"/><path d="M790 50 V290"/><path d="M910 50 V290"/>
+  </g>
+  <path d="M310 290 H910" stroke="#333" stroke-width="2"/>
+  <path d="M310 50 H910" stroke="#333" stroke-width="2"/>
+  <g fill="#333" font-size="12" text-anchor="middle">
+    <text x="310" y="42">10 ms</text><text x="430" y="42">1 ms</text><text x="550" y="42">100 µs</text>
+    <text x="670" y="42">10 µs</text><text x="790" y="42">1 µs</text><text x="910" y="42">100 ns</text>
+    <text x="594" y="20" font-size="13" text-anchor="start">1/f</text><text x="610" y="24" font-size="10" text-anchor="start">clk</text>
+  </g>
+
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <rect x="310" y="62"  width="21"  height="28" rx="3"/>
+    <rect x="310" y="104" width="47"  height="28" rx="3"/>
+    <rect x="310" y="146" width="54"  height="28" rx="3"/>
+    <rect x="310" y="188" width="70"  height="28" rx="3"/>
+  </g>
+  <rect x="310" y="240" width="564" height="28" rx="3" fill="#e6f0f6" stroke="#2a6f97" stroke-width="2"/>
+
+  <g fill="#333" text-anchor="end">
+    <text x="298" y="81">The computer, CPU clocked every tick</text>
+    <text x="298" y="123">The whole board top</text>
+    <text x="298" y="165">The IDE's board view readout</text>
+    <text x="298" y="207">The machine, in slow mode</text>
+    <text x="298" y="259" fill="#1d5470" font-weight="bold">Verilator, in vsim</text>
+  </g>
+  <g fill="#333">
+    <text x="342" y="81">151 Hz, 6.6 ms</text>
+    <text x="368" y="123">246 Hz, 4.1 ms</text>
+    <text x="375" y="165">284 Hz, 3.5 ms</text>
+    <text x="391" y="207">384 Hz, 2.6 ms</text>
+  </g>
+  <text x="760" y="259" fill="#1d5470" font-weight="bold" text-anchor="middle">about 5 MHz, 200 ns</text>
+
+  <g fill="#333" font-size="12" text-anchor="middle">
+    <text x="310" y="310">100 Hz</text><text x="430" y="310">1 kHz</text><text x="550" y="310">10 kHz</text>
+    <text x="670" y="310">100 kHz</text><text x="790" y="310">1 MHz</text><text x="910" y="310">10 MHz</text>
+    <text x="602" y="334" font-size="13" text-anchor="start">f</text><text x="608" y="338" font-size="10" text-anchor="start">clk</text>
+  </g>
+</svg>
