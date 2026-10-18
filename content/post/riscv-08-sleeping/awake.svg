@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">How much of a second the CPU was awake, in simulation</title>
+  <desc id="d">Two horizontal bars covering one second of board time in the simulator. Polling the timer, the CPU clock was enabled for essentially all of it. Waiting in wfi for the timer interrupt, it was enabled for about 11 percent and asleep for about 89 percent.</desc>
+  <rect width="960" height="300" fill="#ffffff"/>
+  <text x="302" y="95" text-anchor="end" font-weight="bold" fill="#333">Menu 4: poll mtime</text>
+  <rect x="320" y="70" width="600" height="40" fill="#f6f6f2" stroke="#333" stroke-width="2"/>
+  <text x="302" y="185" text-anchor="end" font-weight="bold" fill="#333">Menu 5: wfi, then the timer interrupt</text>
+  <rect x="320" y="160" width="65" height="40" fill="#f6f6f2" stroke="#333" stroke-width="2"/>
+  <rect x="385" y="160" width="535" height="40" fill="#e6f0f6" stroke="#2a6f97" stroke-width="2"/>
+  <text x="620" y="95" text-anchor="middle" fill="#333">awake, about 100%</text>
+  <text x="320" y="152" text-anchor="start" font-size="12" fill="#333">awake, 11%</text>
+  <text x="652" y="185" text-anchor="middle" fill="#1d5470" font-weight="bold">asleep, 89%</text>
+  <path d="M320 225 H920" stroke="#333" stroke-width="2"/>
+  <path d="M320 225 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="320" y="250" text-anchor="middle" font-size="12" fill="#333">0%</text>
+  <path d="M470 225 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="470" y="250" text-anchor="middle" font-size="12" fill="#333">25%</text>
+  <path d="M620 225 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="620" y="250" text-anchor="middle" font-size="12" fill="#333">50%</text>
+  <path d="M770 225 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="770" y="250" text-anchor="middle" font-size="12" fill="#333">75%</text>
+  <path d="M920 225 v6" stroke="#333" stroke-width="1.5"/>
+  <text x="920" y="250" text-anchor="middle" font-size="12" fill="#333">100%</text>
+  <text x="620" y="278" text-anchor="middle" font-size="13" fill="#333">share of one second of board time with the CPU clock enabled (simulation, fast mode)</text>
+</svg>
