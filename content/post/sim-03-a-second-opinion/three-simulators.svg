@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">Three simulators and what each one reads</title>
+  <desc id="d">The Lucid source goes two ways. The Alchitry Labs simulator interprets the Lucid directly. The Alchitry build writes Verilog, and two other tools read that Verilog: Yosys simulation, which checks every clock against the rv32sim model, and Verilator in vsim, which is fast and draws the board. The same Verilog also goes to synthesis for the chip, which has not been run.</desc>
+  <rect width="960" height="380" fill="#ffffff"/>
+
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <rect x="20"  y="150" width="130" height="70" rx="4"/>
+    <rect x="260" y="40"  width="190" height="70" rx="4"/>
+    <rect x="260" y="230" width="150" height="70" rx="4"/>
+    <rect x="520" y="150" width="190" height="70" rx="4"/>
+    <rect x="520" y="40"  width="190" height="70" rx="4"/>
+    <rect x="520" y="260" width="190" height="70" rx="4"/>
+  </g>
+  <rect x="780" y="150" width="160" height="70" rx="4" fill="#e6f0f6" stroke="#2a6f97" stroke-width="2"/>
+  <rect x="780" y="40"  width="160" height="70" rx="4" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <g fill="#333" text-anchor="middle">
+    <text x="85" y="180" font-weight="bold">Lucid source</text><text x="85" y="200" font-size="13">my design</text>
+    <text x="355" y="68" font-weight="bold">Alchitry Labs sim</text><text x="355" y="88" font-size="13">interprets the Lucid</text>
+    <text x="335" y="258" font-weight="bold">alchitry build</text><text x="335" y="278" font-size="13">writes Verilog</text>
+    <text x="615" y="178" font-weight="bold">Yosys sim (xsim)</text><text x="615" y="198" font-size="13">every flip flop together</text>
+    <text x="615" y="68" font-weight="bold">Verilator (vsim)</text><text x="615" y="88" font-size="13">fast, draws the board</text>
+    <text x="615" y="288" font-weight="bold">Synthesis, place, route</text><text x="615" y="308" font-size="13">the build for the chip</text>
+    <text x="860" y="178" fill="#1d5470" font-weight="bold">rv32sim</text><text x="860" y="198" font-size="13" fill="#1d5470">compare every clock</text>
+    <text x="860" y="68" font-size="13">a real board</text><text x="860" y="88" font-size="13">not run yet</text>
+  </g>
+
+  <g stroke="#333" stroke-width="2" fill="none">
+    <path d="M150 185 H200 V75 H260"/>
+    <path d="M150 185 H200 V265 H260"/>
+    <path d="M410 265 H470 V185 H520"/>
+    <path d="M470 265 V75 H520"/>
+    <path d="M410 265 H470 V295 H520"/>
+    <path d="M710 185 H780"/>
+    <path d="M710 295 H745 V75 H780" stroke-dasharray="6 4"/>
+  </g>
+  <g fill="#333">
+    <path d="M251 70 L260 75 L251 80 Z"/>
+    <path d="M251 260 L260 265 L251 270 Z"/>
+    <path d="M511 180 L520 185 L511 190 Z"/>
+    <path d="M511 70 L520 75 L511 80 Z"/>
+    <path d="M511 290 L520 295 L511 300 Z"/>
+    <path d="M771 180 L780 185 L771 190 Z"/>
+    <path d="M771 70 L780 75 L771 80 Z"/>
+  </g>
+</svg>
