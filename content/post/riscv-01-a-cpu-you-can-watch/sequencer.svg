@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 290" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="t">The sequencer's four states</title>
+  <desc id="d">FETCH always goes to EXECUTE. From EXECUTE an ALU operation, branch or jump returns to FETCH after 2 clocks. A load or store goes on to MEM_ACCESS. A store returns to FETCH after 3 clocks. A load goes on to WRITEBACK and returns after 4 clocks.</desc>
+  <rect width="880" height="290" fill="#ffffff"/>
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <rect x="30"  y="50" width="150" height="60" rx="4"/>
+    <rect x="250" y="50" width="150" height="60" rx="4"/>
+    <rect x="470" y="50" width="170" height="60" rx="4"/>
+    <rect x="700" y="50" width="150" height="60" rx="4"/>
+  </g>
+  <g fill="#333" text-anchor="middle" font-weight="bold">
+    <text x="105" y="86">FETCH</text>
+    <text x="325" y="86">EXECUTE</text>
+    <text x="555" y="86">MEM_ACCESS</text>
+    <text x="775" y="86">WRITEBACK</text>
+  </g>
+  <g stroke="#333" stroke-width="2" fill="none">
+    <path d="M180 80 H250"/>
+    <path d="M400 80 H470"/>
+    <path d="M640 80 H700"/>
+    <path d="M325 110 V165 H165 V110"/>
+    <path d="M555 110 V205 H135 V110"/>
+    <path d="M775 110 V245 H105 V110"/>
+  </g>
+  <g fill="#333">
+    <path d="M240 75 L250 80 L240 85 Z"/>
+    <path d="M460 75 L470 80 L460 85 Z"/>
+    <path d="M690 75 L700 80 L690 85 Z"/>
+    <path d="M160 120 L165 110 L170 120 Z"/>
+    <path d="M130 120 L135 110 L140 120 Z"/>
+    <path d="M100 120 L105 110 L110 120 Z"/>
+  </g>
+  <g fill="#333" font-size="13" text-anchor="middle">
+    <text x="435" y="40">load or store</text>
+    <text x="670" y="40">load</text>
+    <text x="245" y="185">ALU op, branch, jump: 2 clocks</text>
+    <text x="345" y="225">store: 3 clocks</text>
+    <text x="440" y="265">load: 4 clocks</text>
+  </g>
+</svg>

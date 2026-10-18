@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 450" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="t">The first datapath</title>
+  <desc id="d">The program counter addresses the instruction memory. The instruction goes to the control unit, the register file and the immediate generator. The register file's two outputs go to the ALU, the second through a multiplexer that can choose the immediate instead. The ALU result is written back to the register file. Register x1's low eight bits drive the LEDs. The control unit sets the register write, the ALU operation, the multiplexer and the program counter.</desc>
+  <rect width="960" height="450" fill="#ffffff"/>
+
+  <g fill="#f6f6f2" stroke="#333" stroke-width="2">
+    <rect x="15"  y="160" width="100" height="70" rx="4"/>
+    <rect x="160" y="160" width="125" height="70" rx="4"/>
+    <rect x="420" y="30"  width="440" height="60" rx="4"/>
+    <rect x="420" y="150" width="170" height="110" rx="4"/>
+    <rect x="420" y="320" width="120" height="50" rx="4"/>
+    <rect x="690" y="215" width="40"  height="70" rx="4"/>
+    <rect x="780" y="150" width="120" height="140" rx="4"/>
+    <rect x="880" y="115" width="70"  height="34" rx="4"/>
+  </g>
+
+  <g fill="#333" text-anchor="middle">
+    <text x="65"  y="190">Program</text><text x="65" y="209">counter</text>
+    <text x="222" y="190">Instruction</text><text x="222" y="209">memory</text>
+    <text x="640" y="56" font-weight="bold">Control unit</text><text x="640" y="76" font-size="13">(decoder + sequencer)</text>
+    <text x="505" y="188" font-weight="bold">Register file</text><text x="505" y="208" font-size="13">16 x 32 bits</text><text x="505" y="228" font-size="13">x0 always reads 0</text>
+    <text x="480" y="341">Immediate</text><text x="480" y="360">generator</text>
+    <text x="840" y="215" font-weight="bold">ALU</text>
+    <text x="915" y="137" font-size="13">LEDs</text>
+  </g>
+  <g fill="#333" font-size="13" text-anchor="middle">
+    <text x="710" y="236" text-anchor="middle" font-size="12">0</text>
+    <text x="710" y="270" text-anchor="middle" font-size="12">1</text>
+  </g>
+
+  <!-- data wires -->
+  <g stroke="#333" stroke-width="2" fill="none">
+    <path d="M115 195 H160"/>
+    <path d="M285 195 H325"/>
+    <path d="M325 60 V345" stroke-width="3"/>
+    <path d="M325 60 H420"/>
+    <path d="M325 205 H420"/>
+    <path d="M325 345 H420"/>
+    <path d="M590 175 H780"/>
+    <path d="M590 235 H690"/>
+    <path d="M540 345 H670 V265 H690"/>
+    <path d="M730 250 H780"/>
+    <path d="M900 220 H935 V415 H565 V260"/>
+    <path d="M565 150 V132 H880"/>
+    <!-- slashes for bus widths -->
+    <path d="M131 201 L139 189"/>
+    <path d="M300 201 L308 189"/>
+    <path d="M752 181 L760 169"/>
+  </g>
+  <circle cx="325" cy="195" r="4" fill="#333"/>
+  <circle cx="325" cy="205" r="4" fill="#333"/>
+
+  <!-- control wires -->
+  <g stroke="#333" stroke-width="1.5" stroke-dasharray="6 4" fill="none">
+    <path d="M420 38 H65 V160"/>
+    <path d="M490 90 V150"/>
+    <path d="M710 90 V215"/>
+    <path d="M840 90 V150"/>
+  </g>
+
+  <!-- arrowheads -->
+  <g fill="#333">
+    <path d="M151 190 L160 195 L151 200 Z"/>
+    <path d="M411 55 L420 60 L411 65 Z"/>
+    <path d="M411 200 L420 205 L411 210 Z"/>
+    <path d="M411 340 L420 345 L411 350 Z"/>
+    <path d="M771 170 L780 175 L771 180 Z"/>
+    <path d="M681 230 L690 235 L681 240 Z"/>
+    <path d="M681 260 L690 265 L681 270 Z"/>
+    <path d="M771 245 L780 250 L771 255 Z"/>
+    <path d="M560 270 L565 260 L570 270 Z"/>
+    <path d="M871 127 L880 132 L871 137 Z"/>
+    <path d="M60 150 L65 160 L70 150 Z"/>
+    <path d="M485 140 L490 150 L495 140 Z"/>
+    <path d="M705 205 L710 215 L715 205 Z"/>
+    <path d="M835 140 L840 150 L845 140 Z"/>
+  </g>
+
+  <!-- labels -->
+  <g fill="#333" font-size="12" text-anchor="middle">
+    <text x="137" y="183">32</text>
+    <text x="304" y="183">32</text>
+    <text x="756" y="163">32</text>
+    <text x="372" y="53">opcode, funct</text>
+    <text x="372" y="198">rs1 rs2 rd</text>
+    <text x="372" y="338">immediate bits</text>
+    <text x="240" y="30">pc_write, pc_src</text>
+    <text x="336" y="272" text-anchor="start">instruction</text>
+    <text x="645" y="168" font-size="13">read_data1</text>
+    <text x="640" y="228" font-size="13">read_data2</text>
+    <text x="600" y="339" font-size="13">immediate</text>
+    <text x="750" y="434" font-size="13">write_data (the ALU result)</text>
+    <text x="630" y="126" font-size="13">x1[7:0]</text>
+    <text x="497" y="112" text-anchor="start">reg_write</text>
+    <text x="717" y="112" text-anchor="start">alu_src_b</text>
+    <text x="847" y="104" text-anchor="start">alu_op</text>
+  </g>
+</svg>
