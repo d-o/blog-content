@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" role="img" aria-label="Memory layout of the fader before and after the linker fix">
+<style>.t{font:600 14px ui-monospace,Menlo,monospace;fill:#1b1f24}.s{font:12px ui-monospace,Menlo,monospace;fill:#444}.a{font:12px ui-monospace,Menlo,monospace;fill:#555}.h{font:700 15px system-ui,sans-serif;fill:#1b1f24}.r{font:600 12px system-ui,sans-serif;fill:#b3261e}.g{font:600 12px system-ui,sans-serif;fill:#1a6b3a}</style>
+<defs><marker id="mb3261e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b3261e"/></marker><marker id="m1a6b3a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a6b3a"/></marker></defs>
+<rect width="860" height="420" rx="8" fill="#fbfaf7"/>
+<text x="235" y="40" text-anchor="middle" class="h">before: bare ". = . + n"</text>
+<text x="555" y="40" text-anchor="middle" class="h">after: .datacopy section</text>
+<text x="235" y="60" text-anchor="middle" class="a">linker put .sbss on the copy</text>
+<text x="555" y="60" text-anchor="middle" class="a">copy has its own room</text>
+<text x="100" y="100" text-anchor="end" class="a">0x1328</text>
+<text x="100" y="146" text-anchor="end" class="a">0x132c</text>
+<text x="100" y="192" text-anchor="end" class="a">0x1330</text>
+<text x="100" y="238" text-anchor="end" class="a">0x1334</text>
+<text x="100" y="284" text-anchor="end" class="a">0x1338</text>
+<text x="100" y="376" text-anchor="end" class="a">0x1350</text>
+<rect x="110" y="96" width="250" height="46" fill="#e4e2dc" stroke="#8a877f" stroke-width="1.5"/><text x="235.0" y="124.0" text-anchor="middle" class="t">.rodata</text>
+<rect x="110" y="142" width="250" height="46" fill="#cfe0f5" stroke="#2b6cb0" stroke-width="1.5"/><text x="235.0" y="162.0" text-anchor="middle" class="t">dir</text><text x="235.0" y="179.0" text-anchor="middle" class="s">.sdata</text>
+<rect x="110" y="188" width="250" height="46" fill="#f7c9c5" stroke="#b3261e" stroke-width="1.5"/><text x="235.0" y="208.0" text-anchor="middle" class="t">phase</text><text x="235.0" y="225.0" text-anchor="middle" class="s">.sbss, on the copy slot</text>
+<rect x="110" y="234" width="250" height="46" fill="#cdebd6" stroke="#1a6b3a" stroke-width="1.5"/><text x="235.0" y="254.0" text-anchor="middle" class="t">pos</text><text x="235.0" y="271.0" text-anchor="middle" class="s">.sbss</text>
+<rect x="110" y="280" width="250" height="92" fill="#cdebd6" stroke="#1a6b3a" stroke-width="1.5"/><text x="235.0" y="323.0" text-anchor="middle" class="t">.bss</text><text x="235.0" y="340.0" text-anchor="middle" class="s">24 bytes</text>
+<rect x="430" y="96" width="250" height="46" fill="#cfe0f5" stroke="#2b6cb0" stroke-width="1.5"/><text x="555.0" y="116.0" text-anchor="middle" class="t">dir</text><text x="555.0" y="133.0" text-anchor="middle" class="s">.sdata</text>
+<rect x="430" y="142" width="250" height="46" fill="#fbe3a8" stroke="#a06a00" stroke-width="1.5"/><text x="555.0" y="162.0" text-anchor="middle" class="t">copy of dir</text><text x="555.0" y="179.0" text-anchor="middle" class="s">.datacopy</text>
+<rect x="430" y="188" width="250" height="46" fill="#cdebd6" stroke="#1a6b3a" stroke-width="1.5"/><text x="555.0" y="208.0" text-anchor="middle" class="t">phase</text><text x="555.0" y="225.0" text-anchor="middle" class="s">.sbss</text>
+<rect x="430" y="234" width="250" height="46" fill="#cdebd6" stroke="#1a6b3a" stroke-width="1.5"/><text x="555.0" y="254.0" text-anchor="middle" class="t">pos</text><text x="555.0" y="271.0" text-anchor="middle" class="s">.sbss</text>
+<rect x="430" y="280" width="250" height="92" fill="#cdebd6" stroke="#1a6b3a" stroke-width="1.5"/><text x="555.0" y="323.0" text-anchor="middle" class="t">.bss</text><text x="555.0" y="340.0" text-anchor="middle" class="s">24 bytes</text>
+<path d="M 110 211.0 h -22 V 165.0 h 20" fill="none" stroke="#b3261e" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#mb3261e)"/>
+<path d="M 430 165.0 h -22 V 119.0 h 20" fill="none" stroke="#1a6b3a" stroke-width="2" stroke-dasharray="0" marker-end="url(#m1a6b3a)"/>
+<path d="M 366 237 h 10 V 369 h -10" fill="none" stroke="#b3261e" stroke-width="2"/><text x="382" y="299.0" class="r">crt0 zeroes</text><text x="382" y="315.0" class="r">0x1334–0x1350</text>
+<path d="M 686 191 h 10 V 369 h -10" fill="none" stroke="#1a6b3a" stroke-width="2"/><text x="702" y="276.0" class="g">crt0 zeroes</text><text x="702" y="292.0" class="g">0x1330–0x1350</text>
+<text x="235.0" y="402" text-anchor="middle" class="r">restores dir = phase (0, 1 or 2); phase never zeroed</text>
+<text x="555.0" y="402" text-anchor="middle" class="g">restores dir = 1; phase and pos zeroed</text>
+</svg>
