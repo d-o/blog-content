@@ -126,3 +126,5 @@ All of this is in simulation. The waveforms are the simulated pins, the timing r
 ## What I learned
 
 The same program has now been a blinkenlight, a timed program and a system, and the machine under it grew each time. The most useful finding this round was not a feature. It was that three different tools each showed me something the others did not: Yosys saw the Verilog the simulator passed, vsim saw the deadlock that no test could reach, and the trace showed that two things that looked the same were not.
+
+Next time, [the board arrives]({{< relref "riscv-13-the-board-arrives" >}}): everything so far was simulation, and this is the first time it runs on the chip.

@@ -96,3 +96,5 @@ And before any of them, the **board**. That is the edge that decides which of th
 ## What I learned
 
 The list of where it breaks is not an apology. It is the useful output of the project. Every edge on it is a question I know to ask, and for most of them I know which tool will answer it. The most valuable habit was not writing tests. It was writing a test, then breaking the design to see whether the test noticed.
+
+Next time, [the scanner, third time]({{< relref "riscv-12-larson-again" >}}): the same program again, now a system.

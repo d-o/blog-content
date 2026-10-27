@@ -67,6 +67,8 @@ It is a simulator, so it knows nothing about the pins, the timing of the real ch
 
 It is also still one tool. The posts to come include the ways two simulators can disagree, and the day this one found a bug the other one could not see: a timer that ticked 25 times too fast on the real board.
 
+Next in this thread: [why the IDE simulates at 284 Hz]({{< relref "sim-01-284-hz" >}}). The machine thread carries on with [A CPU you can watch]({{< relref "riscv-01-a-cpu-you-can-watch" >}}).
+
 ## References
 
 - Verilator: <https://www.veripool.org/verilator/>
