@@ -1,6 +1,6 @@
 +++
 date = '2026-10-19T00:30:00+11:00'
-draft = true
+draft = false
 title = 'RISC-V soft core 8: Sleeping, and measuring it'
 author = 'Dean Sellers'
 tags = [

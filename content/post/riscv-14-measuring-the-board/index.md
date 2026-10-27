@@ -1,6 +1,6 @@
 +++
 date = '2026-10-27T14:00:00+11:00'
-draft = true
+draft = false
 title = 'RISC-V soft core 14: Measuring the board'
 author = 'Dean Sellers'
 tags = [

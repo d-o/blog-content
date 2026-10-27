@@ -1,6 +1,6 @@
 +++
 date = '2026-10-18T19:00:00+11:00'
-draft = true
+draft = false
 title = 'RISC-V soft core 3: Harvard by accident, von Neumann by choice'
 author = 'Dean Sellers'
 tags = [

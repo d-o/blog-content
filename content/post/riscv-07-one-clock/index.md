@@ -1,6 +1,6 @@
 +++
 date = '2026-10-19T00:20:00+11:00'
-draft = true
+draft = false
 title = 'RISC-V soft core 7: One clock'
 author = 'Dean Sellers'
 tags = [

@@ -1,6 +1,6 @@
 +++
 date = '2026-10-18T16:00:00+11:00'
-draft = true
+draft = false
 title = 'RISC-V soft core 1: A CPU you can watch'
 author = 'Dean Sellers'
 tags = [

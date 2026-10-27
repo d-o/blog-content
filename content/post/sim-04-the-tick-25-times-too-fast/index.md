@@ -1,6 +1,6 @@
 +++
 date = '2026-10-19T00:25:00+11:00'
-draft = true
+draft = false
 title = 'Simulator 4: The tick that was 25 times too fast'
 author = 'Dean Sellers'
 tags = [

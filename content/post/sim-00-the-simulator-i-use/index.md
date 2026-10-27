@@ -1,6 +1,6 @@
 +++
 date = '2026-10-18T17:00:00+11:00'
-draft = true
+draft = false
 title = 'Simulator 0: The simulator I use'
 author = 'Dean Sellers'
 tags = [

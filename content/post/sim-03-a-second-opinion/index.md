@@ -1,6 +1,6 @@
 +++
 date = '2026-10-18T22:00:00+11:00'
-draft = true
+draft = false
 title = 'Simulator 3: A second opinion'
 author = 'Dean Sellers'
 tags = [

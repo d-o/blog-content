@@ -1,6 +1,6 @@
 +++
 date = '2026-10-18T18:00:00+11:00'
-draft = true
+draft = false
 title = 'RISC-V soft core 2: Tests that can fail'
 author = 'Dean Sellers'
 tags = [

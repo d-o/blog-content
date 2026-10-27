@@ -1,6 +1,6 @@
 +++
 date = '2026-10-18T20:00:00+11:00'
-draft = true
+draft = false
 title = 'Simulator 1: Why the IDE simulates at 284 Hz'
 author = 'Dean Sellers'
 tags = [
