@@ -79,7 +79,7 @@ The lesson is two sentences. One build is a sample. And a path report names the 
 
 - no `mcycle` or `minstret`, so a program cannot count its own cycles except through `mtime`,
 - no hardware multiply or divide, with a table showing what that costs,
-- no `printf` or standard library, so only what I write myself,
+- no `printf` or standard library. I write the few helpers I need (a UART print, `memcpy` when the compiler asks for one). A real library exists upstream, compact ones and full featured ones, but the RAM is 8 KB and code, data and stack all share it, so what one costs matters and I haven't tried any,
 - no precise access fault, because a fetch from I/O reads zero and traps as illegal,
 - no bootloader, so a new program means regenerating the image,
 - no run against an independent reference, such as QEMU, Spike or the official architecture tests,
@@ -88,6 +88,8 @@ The lesson is two sentences. One build is a sample. And a path report names the 
 ## Where it goes next
 
 A few of these are cheap. An interrupt driven UART with a queue, a receive queue, and `FENCE.I` as a NOP could each be done in a sitting.
+
+The standard library is more a decision than a job: take a compact one and see what fits in 8 KB, take a full featured one and see what doesn't, or keep writing my own as I need it.
 
 Two are bigger, and they pull in different directions. A **hardware multiplier** is the answer to the cost table, and it would spend logic cells that are already two thirds used. A **pipeline** would speed everything up, and it is a different machine: the prefetch trick, the fixed two clock rhythm and every lockstep test depend on the core finishing an instruction before it starts the next.
 

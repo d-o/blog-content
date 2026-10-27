@@ -39,7 +39,7 @@ A UART sends bytes down a wire one bit at a time, at an agreed speed. I wanted o
 |---|---|---|
 | +0 | TXDATA | a store here sends the byte in the lowest lane |
 | +4 | STATUS | bit 0: a transmit is in progress; bit 1: a received byte is waiting; bit 2: a received byte was lost |
-| +8 | RXDATA | a load gives the received byte, and *takes it* |
+| +8 | RXDATA | a load gives the received byte, and *consumes it* |
 
 To print a character a program waits until STATUS says the transmitter is idle, then stores to TXDATA. In assembly it is a three instruction loop: load the status, branch back if busy, store the byte.
 
