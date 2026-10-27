@@ -63,9 +63,9 @@ Scripted clicks turned out to matter. They confirmed what I had seen clicking by
 
 ## What it is not
 
-It is a simulator, so it knows nothing about the pins, the timing of the real chip or a loose wire. The serial port runs five times slower in wall time than the board's will be. And it only simulates the Verilog that the build writes, so I have to run a build first and it warns me when the files are stale.
+It is a simulator, so it knows nothing about the pins, the timing of the real chip or a loose wire. The serial port runs five times slower in wall time than the board's, which is 1 Mbaud. And it only simulates the Verilog that the build writes, so I have to run a build first and it warns me when the files are stale.
 
-It is also still one tool. The posts to come include the ways two simulators can disagree, and the day this one found a bug the other one could not see: a timer that ticked 25 times too fast on the real board.
+It is also still one tool. The posts to come include the ways two simulators can disagree, and the day this one found a bug the other one could not see: a timer that would have ticked 25 times too fast on the real board.
 
 Next in this thread: [why the IDE simulates at 284 Hz]({{< relref "sim-01-284-hz" >}}). The machine thread carries on with [A CPU you can watch]({{< relref "riscv-01-a-cpu-you-can-watch" >}}).
 

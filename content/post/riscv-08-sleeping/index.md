@@ -83,7 +83,7 @@ A side effect I did not expect: the simulator itself runs faster asleep. It ran 
 
 ## What it does not tell me
 
-This is all simulation. The percentages come from counting clock enables, and say nothing about the power a real chip would draw. On an FPGA the clock tree keeps running, and the logic that is idle still takes its static current, so the saving is mostly a *saving of work*, not necessarily of watts. The place to put a number on the real thing is a scope on LED 6 on the board: the duty cycle should come out near the 89 percent, and the width of the low pulses should tell me how many clocks each interrupt costs.
+This is all simulation. The percentages come from counting clock enables, and say nothing about the power a real chip would draw. On an FPGA the clock tree keeps running, and the logic that is idle still takes its static current, so the saving is mostly a *saving of work*, not necessarily of watts. The place to put a number on the real thing is a scope on LED 6 on the board: the duty cycle should come out near the 89 percent, and the width of the low pulses should tell me how many clocks each interrupt costs. (Since measured, on the board: [part 14]({{< relref "riscv-14-measuring-the-board" >}}) has the low pulses at about 34 clocks a tick. The 89 percent duty cycle is a different program and I haven't measured it.)
 
 I have not got a board capture yet. When I do, it is the next paragraph of this post.
 
