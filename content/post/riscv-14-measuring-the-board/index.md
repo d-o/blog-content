@@ -17,13 +17,13 @@ tags = [
 
 *Part 14 of the RISC-V soft core series. Previously: [The board arrives]({{< relref "riscv-13-the-board-arrives" >}}).*
 
-Part 13 ended with a list of things only the board can tell me. This part is the list I could get to: a scope on three signals, and a lot of bytes down the serial port. This might be the first part with no unexpected surprises, or a bunch of *that's what I thought* bits.
+Part 13 ended with a list of things only the board can tell me. This part is the list I could get to: a scope on three signals, and a lot of bytes down the serial port. This might be the first part with no surprises, or a bunch of *that's what I thought* bits.
 
-I'll say up front what is *not* here. I haven't shown that the core meets 25 MHz on every path, and I haven't looked at button bounce or the 7-segment flicker. Those are still to do, and maybe I will. This isn't going to production, with the system running the signals I scoped and the serial soaks, I am going to be fairly confident what is supposed to happen, is happening. As we know though ... there are always edges.
+I'll say up front what is *not* here. I haven't shown that the core meets 25 MHz on every path, and I haven't looked at button bounce or the 7-segment flicker. Those are still to do, and maybe I will. This isn't going to production, and with the signals I scoped and the serial soaks behind me I am fairly confident that what is supposed to happen is happening. As we know though ... there are always edges.
 
 ## The clock
 
-The Cu has a LED that toggles once per cpu clock, so it shows half the clock rate. At full speed the cpu clock is 25 MHz, so the LED should run at 12.5 MHz, a period of 80 ns. Here it is on a Rigol DSO:
+The Cu has an LED that toggles once per cpu clock, so it shows half the clock rate. At full speed the cpu clock is 25 MHz, so the LED should run at 12.5 MHz, a period of 80 ns. Here it is on a Rigol DSO:
 
 ![The cpu-clock LED at full speed: 12.5 MHz, probed at the LED](clock-fast-led-12p5mhz.png)
 
@@ -37,7 +37,7 @@ The edges are rounded and the top is at about 2 V, not 3.3 V. That is my probe p
 
 *The same clock at the pin: 3.3 V swing, a low of 39.5 ns, ringing and about 1 V of undershoot. This is the shot if I ever want an edge rate.*
 
-Now the scope has good edges we get spot on 12.5MHz. At slow the cpu clock is 25 MHz / 2^20 = 23.84 clocks a second, so the LED should blink at 11.92 Hz:
+With good edges the scope reads 12.500 MHz. At slow the cpu clock is 25 MHz / 2^20 = 23.84 clocks a second, so the LED should blink at 11.92 Hz:
 
 ![The cpu-clock LED at slow: 11.918 Hz](clock-slow-led-20ms.png)
 
@@ -79,17 +79,17 @@ rearm:                            # mtimecmp += period (64-bit), the same on eve
     mret
 ```
 
-Every instruction that isn't a load or store takes two clocks on this core. A step in the middle of the sweep is four instructions in either direction. Turning round at the right-hand end takes one more, and turning round at the left-hand end takes two more (the extra `jal`). So the awake time is 34, 36 or 38 clocks, which is 1.36, 1.44 or 1.52 µs, and the ghost edges are 2 and 4 clocks apart, 80 and 160 ns. The picture has them about 70 to 100 ns apart. The shots read 1.35 µs and 1.43 µs on their last trigger, which are the 34 and 36 clocks. I didn't capture the 38. The total is my count of the trap entry, the handler, `rearm` (two `lw`, two `sw`, three ALU instructions), `mret`, the `jal` back to `wfi` and its fetch, and I took `mret` as two clocks without checking it against the core. And really, can't argue with the 'scope.
+Every instruction that isn't a load or store takes two clocks on this core. A step in the middle of the sweep is four instructions in either direction. Turning round at the right-hand end takes one more, and turning round at the left-hand end takes two more (the extra `jal`). So the awake time is 34, 36 or 38 clocks, which is 1.36, 1.44 or 1.52 µs, and the ghost edges are 2 and 4 clocks apart, 80 and 160 ns. The picture has them about 70 to 100 ns apart. The shots read 1.35 µs and 1.43 µs on their last trigger, which are the 34 and 36 clocks. I didn't capture the 38. The total is my count of the trap entry, the handler, `rearm` (two `lw`, two `sw`, three ALU instructions), `mret`, the `jal` back to `wfi` and its fetch, and I took `mret` as two clocks without checking it against the core. And really, you can't argue with the 'scope.
 
 ## The Larson scanner, in real time
 
 With the same program running at the same time, an Io LED shows the scanner's head passing. At full speed the pulses are tiny:
 
-![A Larson LED at full speed: pairs of pulses about 100 µs wide](larson-fast-led-500us.png)
+![A Larson LED at full speed: pairs of pulses, each one step wide](larson-fast-led-500us.png)
 
-*One Io LED, full speed, 500 µs/div. A pair of pulses per sweep: one going out, one coming back.*
+*One Io LED, full speed, 500 µs/div. A pair of pulses per sweep, a step of dark between them: one going out, one coming back.*
 
-It does look a bit like a PWM signal but it's the sweep itself. At 64 µs a step a sweep of 14 steps takes about 0.9 ms, so the LED is lit once on the way out and once on the way back, about 1.3 times per millisecond. To your eye it's a steady glow across the bank, so kind of PWM, the glow is really even along the row so not hanging in one spot.
+It does look a bit like a PWM signal but it's the sweep itself. Each pulse is one step, about 64 µs wide. A sweep of 14 steps takes about 0.9 ms, and the LED is lit once on the way out and once on the way back, with a dark step between. To your eye it's a steady glow along the row, so kind of PWM, but the glow is even along the row and isn't hanging in one spot.
 
 At slow, the same thing is visible by eye and the scope can see the steps:
 
@@ -97,7 +97,9 @@ At slow, the same thing is visible by eye and the scope can see the steps:
 
 ![The next LED in: two pulses per sweep, a step of dark between them](larson-slow-led1-5s.png)
 
-*LED 0 (the end) and LED 1, slow, 5 s/div. LED 0 lights once per sweep. LED 1 lights twice, with a step of dark between them: the head passes it, reaches the end, and passes it again.* A step is about 1.35 s at slow and a sweep is 19.0 s (scope: 52.5 mHz), so 14 steps are 453 cpu clocks at 23.84 Hz: about 32 clocks a step. At slow the handler overloads (the next tick is already due when `mret` returns), so a step is just the handler plus the trip round the loop, and my count above gives about 34. So the count is within about two clocks of the scope, and I could go looking for why, later.
+*LED 0 (the end) and LED 1, slow, 5 s/div. LED 0 lights once per sweep. LED 1 lights twice, with a step of dark between them: the head passes it, reaches the end, and passes it again.*
+
+A step is about 1.35 s at slow and a sweep is 19.0 s (scope: 52.5 mHz), so 14 steps are 453 cpu clocks at 23.84 Hz: about 32 clocks a step. At slow the handler overloads (the next tick is already due when `mret` returns), so a step is just the handler plus the trip round the loop, and my count above gives about 34. So the count is within about two clocks of the scope, and I could go looking for why, later.
 
 ## Serial: does the doubled byte happen?
 
@@ -124,3 +126,13 @@ The part I didn't expect was the clocks-per-call table. The same table printed a
 - **Does it meet 25 MHz?** Everything above says the clock runs, and the logic worked at that clock for the tests I ran. It doesn't bound the margin. That wants the whole nextpnr report, several seeds, and a faster PLL until something breaks.
 - **The gap between echoed bytes**, on the scope at `usb_tx`.
 - **Button bounce**, the **7-segment flicker**, and a **wake from a button press or a serial byte**, all the sleep shots here are timer wakes.
+
+## Wrapping it up
+
+While there are things I could do to keep characterising this, it isn't a production grade exercise, and I want to move on to something more interesting. To me anyway; most people I know were bored to the back teeth long before now. So for now that is as far as I have got, I have learned and remembered a load of stuff that was sitting in long term storage. One of the big take homes is that the fundamentals haven't changed at all. What has changed is the tooling, all of this was done for free (as in beer) except for a reasonable spend in hardware. On that note the [Alchitry](https://alchitry.com) Cu and Io boards are great, huge props to that team. I will be looking into the other more capable boards in their ecosystem when I need to.
+
+So, what is the thing that interests me now? I can think of two ways I could take this, and I will probably get to both eventually. The first (and the ultimate Larson gives a clue) is to go all analogue, so a sigma delta DAC and ADC. The DAC is easy, in fact I have done it. The companion ADC needs a comparator though, and the iCE40 based Cu doesn't provide a built in one. So a small Alchitry *element* board with a filter and buffer for the DAC and a comparator and loop filter for the ADC. Of course the performance won't be great in modern terms, but certainly useable, if you know the limits. This project appeals as I haven't done much board design and fab and the muscle needs exercising.
+
+The second might be a bit ambitious, but I would like to define a SoC and board and see what else is missing. We have the system timer, our simple interrupt controller might not work. The elephant in the room would be RAM, there is still some unused blocks. This idea is probably less well formed and lower on the list, but it might be a fun exercise. I imagine there is quite a bit to find out about both Zephyr and our RiscV core.
+
+But for now, if you made it this far, well done. I'll try my best to get the next steps up and going soon!
