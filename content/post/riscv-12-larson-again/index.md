@@ -121,7 +121,7 @@ So the honest summary is that an FPGA does not give you a fast computer. It give
 
 ## What I did not do
 
-All of this is in simulation. The waveforms are the simulated pins, the timing report says what the build was made for, and I have not seen the LEDs on the real board. The brightness the eye sees depends on the real LEDs and the real pins, and the edge rates of sigma-delta on a board are exactly the kind of thing a simulator cannot tell me. If the board runs this, a scope on one LED in each mode is the picture to take. (It has since run on the board, see [part 13]({{< relref "riscv-13-the-board-arrives" >}}). The scope on the fader's two modes is still to do.)
+All of this is in simulation. The waveforms are the simulated pins, the timing report says what the build was made for, and I have not seen the LEDs on the real board. The brightness the eye sees depends on the real LEDs and the real pins, and the edge rates of sigma-delta on a board are exactly the kind of thing a simulator cannot tell me. If the board runs this, a scope on one LED in each mode is the picture to take. (It has since run on the board, see [part 13]({{< relref "riscv-13-the-board-arrives" >}}), and the fader looks right by eye. I haven't put a scope on the two modes, so their edge rates are still unmeasured.)
 
 ## What I learned
 
