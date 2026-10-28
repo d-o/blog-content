@@ -25,10 +25,6 @@ anonymizeIP = true
 respectDoNotTrack = true
 useSessionStorage = false
 
-[author]
-name = "My Name"
-profile = ""
-
 [taxonomies]
 tag = "tags"
 
@@ -48,6 +44,10 @@ shareLinkedIn = false
 dateFormat = "Mon, Jan 2, 2006"
 readingTime = true
 readingTimeText = "Estimated reading time: "
+
+  [params.author]
+  name = "Dean Sellers"
+  profile = ""
 
   [params.plausibleAnalytics]
   domain = ""
