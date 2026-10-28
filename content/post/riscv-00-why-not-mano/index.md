@@ -69,6 +69,8 @@ By the time we are done it will have boot code, a UART, a timer, interrupts and 
 
 I should say that until recently the thing that was *missing* was real software. In simulation it had run assembly I wrote for the tests, and a Larson scanner (the LEDs sweeping back and forth) that I am inordinately fond of. This again shows my vintage, Knight Rider and Battlestar Galactica! Now it has run C as well, still in simulation: a gcc-compiled program prints *Hello from C!* over the UART, and it is an entry in the board's boot menu. That is the bit that the old Mano machine never would have given me.
 
+The source is on GitHub as [RISCitry](https://github.com/d-o/RISCitry). It is the machine as it stands now, so it is well ahead of where this series starts.
+
 ## What's next
 
 The series comes in two threads. The main one is the machine itself, from the first state machine and a blinking light up to interrupts and sleeping. The second is the *tools*, because I ended up writing my own front end for Verilator after finding out that the simulator that comes with the IDE sometimes tells fibs, and it is a better way to *see* what is going on. That thread starts with [the simulator I use]({{< relref "sim-00-the-simulator-i-use" >}}).
@@ -82,6 +84,7 @@ First up in the machine thread, [the CPU you can watch]({{< relref "riscv-01-a-c
 - Alchitry Cu: <https://alchitry.com/boards/cu/>
 - Alchitry Io: <https://alchitry.com/boards/io/>
 - Lucid reference: <https://alchitry.com/tutorials/references/lucid-reference/>
+- RISCitry, the source: <https://github.com/d-o/RISCitry>
 
 [riscv]: https://docs.riscv.org/reference/isa/v20260120/index.html
 [cu]: https://alchitry.com/boards/cu/

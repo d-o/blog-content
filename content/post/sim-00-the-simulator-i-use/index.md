@@ -67,6 +67,8 @@ It is a simulator, so it knows nothing about the pins, the timing of the real ch
 
 It is also still one tool. The posts to come include the ways two simulators can disagree, and the day this one found a bug the other one could not see: a timer that would have ticked 25 times too fast on the real board.
 
+The simulator is in the same repository as the CPU, [RISCitry](https://github.com/d-o/RISCitry), under `tools/vsim`. It is GPL-3.0, because its layout follows Alchitry Labs, and the rest of the repository is MIT.
+
 Next in this thread: [why the IDE simulates at 284 Hz]({{< relref "sim-01-284-hz" >}}). The machine thread carries on with [A CPU you can watch]({{< relref "riscv-01-a-cpu-you-can-watch" >}}).
 
 ## References
@@ -75,6 +77,7 @@ Next in this thread: [why the IDE simulates at 284 Hz]({{< relref "sim-01-284-hz
 - Alchitry Cu: <https://alchitry.com/boards/cu/>
 - Alchitry Io: <https://alchitry.com/boards/io/>
 - Alchitry Labs V2 (source, GPL-3.0): <https://github.com/alchitry/Alchitry-Labs-V2>
+- RISCitry, the CPU and this simulator: <https://github.com/d-o/RISCitry>
 
 [verilator]: https://www.veripool.org/verilator/
 [cu]: https://alchitry.com/boards/cu/

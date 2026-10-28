@@ -103,7 +103,7 @@ A step is about 1.35 s at slow and a sweep is 19.0 s (scope: 52.5 mHz), so 14 st
 
 ## Serial: does the doubled byte happen?
 
-The Alchitry simulator sometimes sends a UART byte twice, because the flip-flops in different instances don't update together. The chip's do. The test is on the real board.
+The Alchitry simulator sometimes sends a UART byte twice, because the flip-flops in different instances don't update together. The chip's do. The test is on the real board. The scripts (`serial_soak.py`, `serial_echo_soak.py` and `serial_edges.py`) are in the [RISCitry repository](https://github.com/d-o/RISCitry) under `tools/`.
 
 **The transmitter.** The hello demo prints a numbered line (`sweep XXXXXXXX`) per scanner sweep, so every byte of the stream is predictable. A host script read it for ten hours at full speed: 3.57 GB, 223 million lines, and checked every line against the pattern and the counter. Zero doubled, dropped or corrupt bytes, and no resets. Zero errors in N bytes only bounds the rate, at about 3/N with 95% confidence: below 8.4 × 10⁻¹⁰ per byte.
 
