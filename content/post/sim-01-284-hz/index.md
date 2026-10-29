@@ -2,6 +2,7 @@
 date = '2026-10-18T20:00:00+11:00'
 draft = false
 title = 'Simulator 1: Why the IDE simulates at 284 Hz'
+description = "Why the Alchitry IDE simulated the design at 284 Hz instead of 1 kHz, the first guess that was wrong, and the wrong place I was looking."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu-sim",

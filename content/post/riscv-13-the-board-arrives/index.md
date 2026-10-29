@@ -2,6 +2,7 @@
 date = '2026-10-23T14:00:00+11:00'
 draft = false
 title = 'RISC-V soft core 13: The board arrives'
+description = "Switching on the soft core on a real FPGA board after twelve posts of simulation: dark LEDs, a silent serial port, and what the simulators missed."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

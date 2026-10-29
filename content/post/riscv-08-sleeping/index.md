@@ -2,6 +2,7 @@
 date = '2026-10-19T00:30:00+11:00'
 draft = false
 title = 'RISC-V soft core 8: Sleeping, and measuring it'
+description = "Implementing WFI so the RISC-V soft core really stops its clock until an interrupt, and measuring the CPU about 89 percent asleep in simulation."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

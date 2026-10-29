@@ -2,6 +2,7 @@
 date = '2026-10-19T00:45:00+11:00'
 draft = false
 title = 'RISC-V soft core 11: Where it breaks'
+description = "Where the RISC-V soft core breaks: the bugs found, which tool caught each one, the limits of the design, and the biggest edge, that it had not met a board."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

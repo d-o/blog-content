@@ -2,6 +2,7 @@
 date = '2026-10-27T14:00:00+11:00'
 draft = false
 title = 'RISC-V soft core 14: Measuring the board'
+description = "Measuring the soft core on a real Alchitry board with a scope and serial soaks: the 25 MHz clock, timing and what the simulators got right."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

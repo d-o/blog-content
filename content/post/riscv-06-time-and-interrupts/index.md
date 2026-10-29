@@ -2,6 +2,7 @@
 date = '2026-10-19T00:15:00+11:00'
 draft = false
 title = 'RISC-V soft core 6: Time and interrupts'
+description = "Adding mtime and mtimecmp, a timer interrupt and buttons to the soft core, climbing a timing ladder, and tracking down the button press that got lost."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

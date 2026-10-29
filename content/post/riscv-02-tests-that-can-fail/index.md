@@ -2,6 +2,7 @@
 date = '2026-10-18T18:00:00+11:00'
 draft = false
 title = 'RISC-V soft core 2: Tests that can fail'
+description = "How to trust a CPU you wrote: tests you have seen fail, a single instruction encoder checked against the GNU assembler, and a RAM that was never there."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

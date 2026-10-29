@@ -2,6 +2,7 @@
 date = '2026-10-19T00:25:00+11:00'
 draft = false
 title = 'Simulator 4: The tick that was 25 times too fast'
+description = "A scrolling text demo ran too fast in simulation, which led to a timer divider that was 25 times too small and a third simulator that found it by accident."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu-sim",

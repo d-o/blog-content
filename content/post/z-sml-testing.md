@@ -2,6 +2,7 @@
 date = '2025-11-17T11:29:26+11:00'
 draft = false
 title = 'State machines in Zephyr using boost::sml'
+description = "Trying the header-only boost::sml state machine library in Zephyr, with a dimmable light switch as the example, and why C++ is fine on embedded."
 author = 'Dean Sellers'
 tags = [
     "C++",

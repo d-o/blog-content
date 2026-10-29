@@ -2,6 +2,7 @@
 date = '2026-10-18T22:00:00+11:00'
 draft = false
 title = 'Simulator 3: A second opinion'
+description = "Using Yosys as a second simulator, independent of the Alchitry one because it reads generated Verilog, and a mutation that failed for the wrong reason."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu-sim",

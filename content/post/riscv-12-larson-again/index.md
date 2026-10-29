@@ -2,6 +2,7 @@
 date = '2026-10-19T01:00:00+11:00'
 draft = false
 title = 'RISC-V soft core 12: The scanner, third time'
+description = "A 24 LED Larson scanner in C with a fading tail, driven by a timer interrupt and two small PWM peripherals so the CPU can sleep."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

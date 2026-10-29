@@ -2,6 +2,7 @@
 date = '2026-10-18T16:00:00+11:00'
 draft = false
 title = 'RISC-V soft core 1: A CPU you can watch'
+description = "Building a tiny CPU from a program counter, memory, register file, ALU and control unit, until LEDs sweep along a row, and a double beat that was not a pipeline."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

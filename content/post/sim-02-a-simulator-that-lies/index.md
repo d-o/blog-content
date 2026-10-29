@@ -2,6 +2,7 @@
 date = '2026-10-18T21:00:00+11:00'
 draft = false
 title = 'Simulator 2: A simulator that lies'
+description = "A mutation test that failed when my reasoning said it should pass, and the simulator that reported loads writing nothing to the register file."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu-sim",

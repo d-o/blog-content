@@ -2,6 +2,7 @@
 date = '2026-10-18T19:00:00+11:00'
 draft = false
 title = 'RISC-V soft core 3: Harvard by accident, von Neumann by choice'
+description = "The RISC-V core was Harvard by accident. Moving to a single von Neumann memory, and the store that ran the old instruction word once."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

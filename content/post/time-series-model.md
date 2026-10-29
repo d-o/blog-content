@@ -2,6 +2,7 @@
 date = '2025-11-10T11:29:26+11:00'
 draft = false
 title = 'Time series in graphs'
+description = "Can a graph database store time series data? Modelling events and measurements in Neo4j with temporal types, sketched out with the arrows app."
 author = 'Dean Sellers'
 tags = [
     "neo4j",

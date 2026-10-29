@@ -2,6 +2,7 @@
 date = '2026-10-18T14:00:00+11:00'
 draft = false
 title = 'RISC-V soft core 0: Firmware'
+description = "Why a firmware engineer went back to Mano's 1988 hardware design book and decided to build a RISC-V processor from scratch on an FPGA."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

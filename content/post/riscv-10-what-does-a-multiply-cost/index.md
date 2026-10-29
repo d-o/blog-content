@@ -2,6 +2,7 @@
 date = '2026-10-19T00:40:00+11:00'
 draft = false
 title = 'RISC-V soft core 10: What does a multiply cost?'
+description = "With no M extension, a multiply is a library loop. Timing mul, div and rem from inside the program using mtime on an RV32E soft core."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

@@ -2,6 +2,7 @@
 date = '2026-10-19T00:05:00+11:00'
 draft = false
 title = 'RISC-V soft core 4: Talking to the world'
+description = "RISC-V has no I/O instructions. Memory mapped I/O on the soft core: the address map, a UART, and a boot menu driven by loads and stores."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

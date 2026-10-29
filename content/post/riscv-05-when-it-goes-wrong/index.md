@@ -2,6 +2,7 @@
 date = '2026-10-19T00:10:00+11:00'
 draft = false
 title = 'RISC-V soft core 5: When it goes wrong on purpose'
+description = "Making an illegal instruction trap instead of becoming a nop: CSRs, mepc and mcause, MRET, and where the Zicsr extension fits in a RISC-V core."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu",

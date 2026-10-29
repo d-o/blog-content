@@ -2,6 +2,7 @@
 date = '2025-11-21T09:29:26+11:00'
 draft = false
 title = 'C++ Asio Resource Managed Timer'
+description = "A thread-safe C++ wrapper around asio::steady_timer that reschedules itself and cleans up when the last reference goes, tested by racing it across threads."
 author = 'Dean Sellers'
 tags = [
     "C++",

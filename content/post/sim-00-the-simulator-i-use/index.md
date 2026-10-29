@@ -2,6 +2,7 @@
 date = '2026-10-18T17:00:00+11:00'
 draft = false
 title = 'Simulator 0: The simulator I use'
+description = "The Verilator based simulator behind the RISC-V posts: why not the one built into Alchitry Labs, what it is, what is mine, and what is not."
 author = 'Dean Sellers'
 tags = [
     "riscv-cpu-sim",
