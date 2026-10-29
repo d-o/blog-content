@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dean.sellers.id.au/sitemap.xml
