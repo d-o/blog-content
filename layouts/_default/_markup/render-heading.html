@@ -1,0 +1,5 @@
+{{- if eq .Level 1 -}}
+<p class="post-subtitle">{{ .Text | safeHTML }}</p>
+{{- else -}}
+<h{{ .Level }} id="{{ .Anchor }}">{{ .Text | safeHTML }}</h{{ .Level }}>
+{{- end -}}

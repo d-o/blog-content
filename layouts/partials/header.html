@@ -35,9 +35,9 @@
                                 <img src="{{ . }}" alt="{{ site.Title }}" />
                             </a>
                         {{ else }}
-                            <h1 class="site-title">
+                            <div class="site-title">
                                 <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-                            </h1>
+                            </div>
                         {{ end }}
                         {{ if .Site.Params.rss }}
                             <a class="button-square" href="{{ .Site.BaseURL }}index.xml" aria-label="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a>
