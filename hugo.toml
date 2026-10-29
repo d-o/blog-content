@@ -1,7 +1,7 @@
 baseurl = "https://dean.sellers.id.au/"
 title = "Ampsand"
 theme = "ghostwriter"
-languageCode = "en-au"
+locale = "en-AU"
 copyright = "Dean Sellers"
 enableGitInfo = true
 

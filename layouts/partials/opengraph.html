@@ -1,0 +1,13 @@
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- with .Params.images }}
+{{- range first 6 . }}
+<meta property="og:image" content="{{ . | absURL }}" />
+{{- end }}
+<meta name="twitter:card" content="summary_large_image">
+{{- else }}
+<meta property="og:image" content="{{ "android-chrome-512x512.png" | absURL }}" />
+<meta name="twitter:card" content="summary">
+{{- end }}
