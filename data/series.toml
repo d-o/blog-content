@@ -1,0 +1,70 @@
+# Series groups for the {{< series "key" >}} shortcode (layouts/shortcodes/series.html).
+#
+# A group has a main thread (`main`) and an optional sidebar thread (`side`): related, standalone
+# posts that serve the main thread (the simulator posts beside the RISC-V ones). Each part is
+# `page` = the folder or file name under content/post (no extension), in reading order.
+# `title` is optional: used only when the page is not built (a draft in a production build, or a
+# planned post), where it is shown unlinked. A part with neither a built page nor a title is skipped.
+# To add a post: one `[[key.main]]` or `[[key.side]]` entry here, one shortcode line at the top of the post.
+
+[riscv]
+title = "RISC-V soft core"
+side_title = "Simulator sidebar"
+
+[[riscv.main]]
+page = "riscv-00-why-not-mano"
+[[riscv.main]]
+page = "riscv-01-a-cpu-you-can-watch"
+[[riscv.main]]
+page = "riscv-02-tests-that-can-fail"
+[[riscv.main]]
+page = "riscv-03-von-neumann-by-choice"
+[[riscv.main]]
+page = "riscv-04-talking-to-the-world"
+[[riscv.main]]
+page = "riscv-05-when-it-goes-wrong"
+[[riscv.main]]
+page = "riscv-06-time-and-interrupts"
+[[riscv.main]]
+page = "riscv-07-one-clock"
+[[riscv.main]]
+page = "riscv-08-sleeping"
+[[riscv.main]]
+page = "riscv-09-first-c"
+[[riscv.main]]
+page = "riscv-10-what-does-a-multiply-cost"
+[[riscv.main]]
+page = "riscv-11-where-it-breaks"
+[[riscv.main]]
+page = "riscv-12-larson-again"
+[[riscv.main]]
+page = "riscv-13-the-board-arrives"
+[[riscv.main]]
+page = "riscv-14-measuring-the-board"
+
+[[riscv.side]]
+page = "sim-00-the-simulator-i-use"
+[[riscv.side]]
+page = "sim-01-284-hz"
+[[riscv.side]]
+page = "sim-02-a-simulator-that-lies"
+[[riscv.side]]
+page = "sim-03-a-second-opinion"
+[[riscv.side]]
+page = "sim-04-the-tick-25-times-too-fast"
+
+[zephyr]
+title = "Zephyr on the soft core"
+
+[[zephyr.main]]
+page = "zephyr-00-what-is-a-port"
+[[zephyr.main]]
+page = "zephyr-01-one-file-for-addresses"
+[[zephyr.main]]
+page = "zephyr-02-it-builds-then-it-does-not-link"
+
+# The analogue edge: no post written yet. Add entries as they are drafted
+# (circuit thread adc-NN, tools sidebar kicad-NN; plan in sigma-delta-edge/notes/series-plan.md).
+[adc-dac]
+title = "The analogue edge"
+side_title = "KiCad and ngspice sidebar"

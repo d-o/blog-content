@@ -1,0 +1,32 @@
+{{- /* {{< series "key" >}}: contents box for a series group in data/series.toml. Main thread numbered,
+       sidebar thread listed under it; the current post is marked, not linked. A part whose page is not
+       built (a draft in a production build) shows its optional title unlinked, else is skipped. */ -}}
+{{- $key := .Get 0 -}}
+{{- $g := index hugo.Data.series $key -}}
+{{- if not $g -}}{{- errorf "series shortcode: no group %q in data/series.toml (%s)" $key .Page.File.Path -}}{{- end -}}
+{{- $self := .Page -}}
+{{- $groups := slice (dict "label" $g.title "parts" $g.main "ordered" true) -}}
+{{- if $g.side -}}{{- $groups = $groups | append (dict "label" (or $g.side_title "Related") "parts" $g.side "ordered" false) -}}{{- end -}}
+<nav class="series-box" aria-label="{{ $g.title }}" style="margin:24px 0;padding:12px 16px;border:1px solid currentColor;border-radius:4px;font-size:0.9em">
+{{- range $groups }}
+{{- $label := .label -}}
+{{- $ordered := .ordered -}}
+{{- $rows := slice -}}
+{{- range .parts -}}
+  {{- $p := site.GetPage (printf "/post/%s" .page) -}}
+  {{- if $p -}}
+    {{- $rows = $rows | append (dict "title" $p.Title "url" $p.RelPermalink "cur" (eq $p.RelPermalink $self.RelPermalink)) -}}
+  {{- else if .title -}}
+    {{- $rows = $rows | append (dict "title" .title "url" "" "cur" false) -}}
+  {{- end -}}
+{{- end -}}
+{{- if $rows }}
+<div style="margin:6px 0 2px"><strong>{{ $label }}</strong></div>
+{{ if $ordered }}<ol style="margin:0 0 8px;padding-left:1.4em">{{ else }}<ul style="margin:0 0 8px;padding-left:1.4em">{{ end }}
+{{- range $rows }}
+<li>{{ if .cur }}<strong>{{ .title }}</strong> (this post){{ else if .url }}<a href="{{ .url }}">{{ .title }}</a>{{ else }}{{ .title }} <em>(not published yet)</em>{{ end }}</li>
+{{- end }}
+{{ if $ordered }}</ol>{{ else }}</ul>{{ end }}
+{{- end }}
+{{- end }}
+</nav>
