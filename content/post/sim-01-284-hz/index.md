@@ -13,6 +13,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # 284 clocks a second, and the wrong place to look
 
 *Part 1 of the simulator thread. Previously: [The simulator I use]({{< relref "sim-00-the-simulator-i-use" >}}). The other thread is the [RISC-V soft core]({{< relref "/tags/riscv-cpu" >}}) series.*

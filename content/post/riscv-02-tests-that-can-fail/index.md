@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # Tests that can fail, and a RAM that was never there
 
 *Part 2 of the RISC-V soft core series. Previously: [A CPU you can watch]({{< relref "riscv-01-a-cpu-you-can-watch" >}}).*

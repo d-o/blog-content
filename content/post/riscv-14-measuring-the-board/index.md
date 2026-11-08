@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # Measuring the board
 
 *Part 14 of the RISC-V soft core series. Previously: [The board arrives]({{< relref "riscv-13-the-board-arrives" >}}).*

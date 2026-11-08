@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # One clock, and why slow mode cannot do real time
 
 *Part 7 of the RISC-V soft core series. Previously: [Time and interrupts]({{< relref "riscv-06-time-and-interrupts" >}}).*

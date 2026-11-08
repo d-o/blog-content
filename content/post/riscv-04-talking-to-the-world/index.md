@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # Talking to the world: loads, stores and a boot menu
 
 *Part 4 of the RISC-V soft core series. Previously: [Harvard by accident, von Neumann by choice]({{< relref "riscv-03-von-neumann-by-choice" >}}).*

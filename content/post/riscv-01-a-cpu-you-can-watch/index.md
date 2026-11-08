@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # A CPU you can watch, and a double beat that was not a pipeline
 
 *Part 1 of the RISC-V soft core series. Previously: [Firmware]({{< relref "riscv-00-why-not-mano" >}}).*

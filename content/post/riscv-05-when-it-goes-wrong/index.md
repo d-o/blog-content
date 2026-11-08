@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # When it goes wrong on purpose: traps
 
 *Part 5 of the RISC-V soft core series. Previously: [Talking to the world]({{< relref "riscv-04-talking-to-the-world" >}}).*

@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # The board arrives
 
 *Part 13 of the RISC-V soft core series. Previously: [The scanner, third time]({{< relref "riscv-12-larson-again" >}}).*

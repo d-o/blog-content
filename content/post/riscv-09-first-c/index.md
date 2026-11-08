@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # First C on the core
 
 *Part 9 of the RISC-V soft core series. Previously: [Sleeping, and measuring it]({{< relref "riscv-08-sleeping" >}}).*

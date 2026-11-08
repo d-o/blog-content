@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # Time and interrupts: a timer, some buttons, and the press that got lost
 
 *Part 6 of the RISC-V soft core series. Previously: [When it goes wrong on purpose]({{< relref "riscv-05-when-it-goes-wrong" >}}).*

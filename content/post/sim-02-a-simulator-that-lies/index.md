@@ -13,6 +13,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # A simulator that lies, and a mutation that should not have failed
 
 *Part 2 of the simulator thread. Previously: [Why the IDE simulates at 284 Hz]({{< relref "sim-01-284-hz" >}}). The other thread is the [RISC-V soft core]({{< relref "/tags/riscv-cpu" >}}) series.*

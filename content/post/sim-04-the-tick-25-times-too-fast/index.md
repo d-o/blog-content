@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # The tick that was 25 times too fast, and a simulator that found it by accident
 
 *Part 4 of the simulator thread. Previously: [A second opinion]({{< relref "sim-03-a-second-opinion" >}}). The other thread is the [RISC-V soft core]({{< relref "/tags/riscv-cpu" >}}) series.*

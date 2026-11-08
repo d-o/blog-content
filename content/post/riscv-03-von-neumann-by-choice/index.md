@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # Harvard by accident, von Neumann by choice, and a store that runs the old word once
 
 *Part 3 of the RISC-V soft core series. Previously: [Tests that can fail]({{< relref "riscv-02-tests-that-can-fail" >}}).*

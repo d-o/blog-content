@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # Sleeping, and measuring it
 
 *Part 8 of the RISC-V soft core series. Previously: [One clock]({{< relref "riscv-07-one-clock" >}}).*

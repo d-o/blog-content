@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # A second opinion, and a mutation that failed for the wrong reason
 
 *Part 3 of the simulator thread. Previously: [A simulator that lies]({{< relref "sim-02-a-simulator-that-lies" >}}). The other thread is the [RISC-V soft core]({{< relref "/tags/riscv-cpu" >}}) series.*

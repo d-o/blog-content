@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # What does a multiply cost?
 
 *Part 10 of the RISC-V soft core series. Previously: [First C on the core]({{< relref "riscv-09-first-c" >}}).*

@@ -13,6 +13,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # The simulator I use, with the lid off
 
 *Part 0 of a second thread alongside the RISC-V soft core series. It runs in parallel: the CPU posts say what the machine does, these say how I watch it.*

@@ -15,6 +15,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # The scanner, third time
 
 *Part 12 of the RISC-V soft core series. Previously: [Where it breaks]({{< relref "riscv-11-where-it-breaks" >}}).*

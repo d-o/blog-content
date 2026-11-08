@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+{{< series "riscv" >}}
+
 # Firmware, "You keep using that word. I do not think it means what you think it means"
 
 *Part 0 of a series on building a RISC-V processor from scratch on an FPGA. Next: [a CPU you can watch]({{< relref "riscv-01-a-cpu-you-can-watch" >}}).*
