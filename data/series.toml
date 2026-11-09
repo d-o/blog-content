@@ -62,6 +62,22 @@ page = "zephyr-00-what-is-a-port"
 page = "zephyr-01-one-file-for-addresses"
 [[zephyr.main]]
 page = "zephyr-02-it-builds-then-it-does-not-link"
+[[zephyr.main]]
+page = "zephyr-03-the-rest-of-the-bram"
+[[zephyr.main]]
+page = "zephyr-04-hello-from-the-uart"
+[[zephyr.main]]
+page = "zephyr-05-on-the-board"
+[[zephyr.main]]
+page = "zephyr-06-ticks-and-sleep"
+[[zephyr.main]]
+page = "zephyr-07-the-diet"
+[[zephyr.main]]
+page = "zephyr-08-the-reset-that-crashed-it"
+[[zephyr.main]]
+page = "zephyr-09-the-upgrade-that-grew-516-bytes"
+[[zephyr.main]]
+page = "zephyr-10-larson-from-the-main-thread"
 
 # The analogue edge: no post written yet. Add entries as they are drafted
 # (circuit thread adc-NN, tools sidebar kicad-NN; plan in sigma-delta-edge/notes/series-plan.md).
